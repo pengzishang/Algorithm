@@ -1,3 +1,5 @@
 *.xcuserstate
 .swiftpm/xcode/xcuserdata/
 .swiftpm/xcode/package.xcworkspace/xcuserdata/
+.swiftpm/xcode/package.xcworkspace/xcuserdata
+UserInterfaceState.xcuserstate
