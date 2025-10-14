@@ -8,6 +8,12 @@ import LeetCodeSolutions
 //let res = P0001_Solution1().twoSum([2,7,11,15], 9)
 //print("P0001:", res)
 
-var num = [0,0,1]
-let res = P0283_Solution3().moveZeroes(&num)
-print(num)
+var num = [1,2,6,3,4,5,6]
+//let res = P0283_Solution3().moveZeroes(&num)
+let head = num.toLinkedList()
+head?.printList()
+let newHead = P0203_Solution1().removeElements(head, 6)
+newHead?.printList()
+
+
+

@@ -2,7 +2,6 @@ public final class P0088_Solution2 {
     public init() {}
     public func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         var empty: [Int] = []
-        var time = 0
         var p1 = 0
         var p2 = 0
         while p1 + p2 < m + n {
