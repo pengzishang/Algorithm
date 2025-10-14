@@ -8,6 +8,6 @@ import LeetCodeSolutions
 //let res = P0001_Solution1().twoSum([2,7,11,15], 9)
 //print("P0001:", res)
 
-var num = [847,847,0,0,0,399,416,416,879,879,206,206,206,272]
-let res = P2460_Solution1().applyOperations(num)
-print(res)
+var num = [0,0,1]
+let res = P0283_Solution3().moveZeroes(&num)
+print(num)
