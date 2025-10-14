@@ -1,3 +1,32 @@
+#!/bin/bash
+# Double-clickable macOS command to run the interactive "new problem" generator.
+# It will ask you to choose your project root (the folder containing Package.swift),
+# ensure the script exists at Scripts/new_problem.sh, then run it.
+
+set -euo pipefail
+
+# 1) Ask user to choose the project root (contains Package.swift)
+PROJECT_ROOT="$(/usr/bin/osascript <<'APPLESCRIPT'
+set theFolder to choose folder with prompt "Select your LeetCodeSolutions project root (contains Package.swift):" default location (path to desktop)
+POSIX path of theFolder
+APPLESCRIPT
+)"
+PROJECT_ROOT="${PROJECT_ROOT%/}"
+
+if [[ ! -f "${PROJECT_ROOT}/Package.swift" ]]; then
+  echo "❌ The selected folder does not contain Package.swift:"
+  echo "   ${PROJECT_ROOT}"
+  exit 1
+fi
+
+cd "${PROJECT_ROOT}"
+
+# 2) Ensure Scripts/new_problem.sh exists (if not, create it with the interactive version)
+mkdir -p Scripts
+
+SCRIPT_PATH="Scripts/new_problem.sh"
+if [[ ! -f "${SCRIPT_PATH}" ]]; then
+  cat > "${SCRIPT_PATH}" <<'EOS'
 #!/usr/bin/env bash
 # Interactive creator for a new LeetCode problem skeleton (Swift SPM project)
 # Usage: bash Scripts/new_problem.sh
@@ -91,29 +120,36 @@ if [[ -e "${SWIFT_FILE}" || -e "${README_FILE}" ]]; then
 fi
 
 cat > "${SWIFT_FILE}" <<EOF
-public final class P${ID}_Solution1 {
+public final class P\${ID}_Solution1 {
     public init() {}
 }
 EOF
 
 cat > "${README_FILE}" <<EOF
-# P${ID}. ${TITLE_RAW}
+# P\${ID}. \${TITLE_RAW}
 
 \`\`\`text
-${PROBLEM_CONTENT}
+\${PROBLEM_CONTENT}
 \`\`\`
 
 ## Notes
-- Add more solutions as \`P${ID}_Solution2.swift\`, \`P${ID}_Solution3.swift\`, etc.
+- Add more solutions as \`P\${ID}_Solution2.swift\`, \`P\${ID}_Solution3.swift\`, etc.
 - Filenames use the problem id prefix to avoid SwiftPM object-file name collisions.
 EOF
 
 echo
 echo "✅ Created problem skeleton:"
-echo "  - ${SWIFT_FILE}"
-echo "  - ${README_FILE}"
+echo "  - \${SWIFT_FILE}"
+echo "  - \${README_FILE}"
 echo
 echo "Next steps:"
-echo "  • Implement \`P${ID}_Solution1\`."
-echo "  • (Optional) Add tests in \`Tests/LeetCodeSolutionsTests/P${ID}_${SLUG}Tests.swift\`."
+echo "  • Implement \`P\${ID}_Solution1\`."
+echo "  • (Optional) Add tests in \`Tests/LeetCodeSolutionsTests/P\${ID}_\${SLUG}Tests.swift\`."
 echo
+EOS
+
+  chmod +x "${SCRIPT_PATH}"
+fi
+
+# 3) Run the interactive generator
+bash "${SCRIPT_PATH}"

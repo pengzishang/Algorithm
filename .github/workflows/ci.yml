@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ macos-latest ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Environment diagnostics
+        run: |
+          echo "--- sw_vers ---"
+          sw_vers || true
+          echo "--- uname -a ---"
+          uname -a || true
+          echo "--- swift --version ---"
+          swift --version || true
+      - name: Ensure Swift version is Apple Swift 6.1.2
+        run: |
+          EXPECTED="Apple Swift version 6.1.2"
+          echo "Expecting: $EXPECTED"
+          ACTUAL=$(swift --version 2>&1 | head -n1)
+          echo "Actual: $ACTUAL"
+          if ! echo "$ACTUAL" | grep -q "Apple Swift version 6.1.2"; then
+            echo "Swift version mismatch: expected $EXPECTED"
+            exit 1
+          fi
+      - name: Run tests
+        run: swift test --parallel
