@@ -1,18 +1,18 @@
-public class ListNode<T> {
-    public var val: T
-    public var next: ListNode<T>?
-    public init(_ val: T) {
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val: Int) {
         self.val = val
         self.next = nil
     }
-    public init(_ val: T, _ next: ListNode<T>?) {
+    public init(_ val: Int, _ next: ListNode?) {
         self.val = val
         self.next = next
     }
 }
 
-public extension Array {
-    func toLinkedList() -> ListNode<Element>? {
+public extension Array<Int> {
+    func toLinkedList() -> ListNode? {
         guard !isEmpty else { return nil }
         let dummy = ListNode(self[0])
         var current = dummy
@@ -24,7 +24,7 @@ public extension Array {
     }
 }
 
-public extension ListNode where T: CustomStringConvertible {
+public extension ListNode {
     func printList() {
         var node: ListNode? = self
         var result: [String] = []
