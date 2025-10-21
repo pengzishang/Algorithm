@@ -10,9 +10,9 @@ import LeetCodeSolutions
 
 var num = [1,2,3]
 //let res = P0283_Solution3().moveZeroes(&num)
-let head = [1,2,3,4,5].toLinkedList()
+let head = [5,2,13,3,8].toLinkedList()
 head?.printList()
-let newHead = P3217_Solution1().modifiedList(num,head)
+let newHead = P2487_Solution2().removeNodes(head)
 newHead?.printList()
 
 
