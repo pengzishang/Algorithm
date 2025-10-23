@@ -16,6 +16,5 @@ import LeetCodeSolutions
 // newHead?.printList()
 
 let nums1 = [4,1,2], nums2 = [1,3,4,2]
-let rArray = P496_Solution2().nextGreaterElement(nums1, nums2)
-print(rArray)
+let rArray = P2996_Solution1().missingInteger([1,2,3,2,5])
 // [-1,3,-1]
