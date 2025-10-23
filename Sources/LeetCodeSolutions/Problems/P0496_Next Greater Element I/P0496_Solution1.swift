@@ -1,4 +1,4 @@
-public final class P496_Solution1 {
+public final class P0496_Solution1 {
     public init() {}
     public func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         var rArray = [Int]()
