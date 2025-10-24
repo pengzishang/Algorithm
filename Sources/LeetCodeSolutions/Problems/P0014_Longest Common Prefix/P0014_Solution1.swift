@@ -1,5 +1,6 @@
 public final class P0014_Solution1 {
     public init() {}
+    // 自己想出来的, 暴力法
     public func longestCommonPrefix(_ strs: [String]) -> String {
         let maxReachableLength = strs.max(by: { $0.count > $1.count })?.count ?? 0
         if maxReachableLength == 0 {
