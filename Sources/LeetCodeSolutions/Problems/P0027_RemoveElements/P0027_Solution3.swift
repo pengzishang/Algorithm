@@ -1,10 +1,9 @@
 public final class P0027_Solution3 {
-
     public init() {}
     public func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
         var indexF = 0
         var indexS = 0
-        
+
         while indexF < nums.count {
             let valueF = nums[indexF]
             let valueS = nums[indexS]
@@ -30,7 +29,7 @@ public final class P0027_Solution3 {
                 }
             }
         }
-        
+
         return indexS
     }
 }

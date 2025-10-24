@@ -1,6 +1,6 @@
 public final class P0283_Solution3 {
     public init() {}
-    
+
     public func moveZeroes(_ nums: inout [Int]) {
         if nums.count <= 1 {
             return

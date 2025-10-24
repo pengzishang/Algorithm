@@ -3,20 +3,21 @@ public class ListNode {
     public var next: ListNode?
     public init(_ val: Int) {
         self.val = val
-        self.next = nil
+        next = nil
     }
+
     public init(_ val: Int, _ next: ListNode?) {
         self.val = val
         self.next = next
     }
 }
 
-public extension Array<Int> {
+public extension [Int] {
     func toLinkedList() -> ListNode? {
         guard !isEmpty else { return nil }
         let dummy = ListNode(self[0])
         var current = dummy
-        for val in self.dropFirst() {
+        for val in dropFirst() {
             current.next = ListNode(val)
             current = current.next!
         }

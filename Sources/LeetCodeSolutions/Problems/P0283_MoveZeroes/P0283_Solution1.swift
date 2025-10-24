@@ -1,6 +1,6 @@
 public final class P0283_Solution1 {
     public init() {}
-    
+
     public func moveZeroes(_ nums: inout [Int]) {
         if nums.count <= 1 {
             return
@@ -8,7 +8,7 @@ public final class P0283_Solution1 {
         var s = 0
         while s < nums.count {
             if nums[s] == 0 {
-                for f in s..<nums.count {
+                for f in s ..< nums.count {
                     if nums[f] != 0 {
                         nums.swapAt(s, f)
                         s += 1

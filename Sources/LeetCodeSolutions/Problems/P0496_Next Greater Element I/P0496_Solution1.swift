@@ -4,7 +4,7 @@ public final class P0496_Solution1 {
         var rArray = [Int]()
         for item1 in nums1 {
             let index = nums2.firstIndex(of: item1)!
-            let existValue = nums2[index..<nums2.count].first(where: { $0 > item1 })
+            let existValue = nums2[index ..< nums2.count].first(where: { $0 > item1 })
 
             if let existValue {
                 rArray.append(existValue)

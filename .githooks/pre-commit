@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Ensure we run at the repo root
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+# Run formatter script
+if [[ -x "./Scripts/format.sh" ]]; then
+  ./Scripts/format.sh
+else
+  echo "[pre-commit] ERROR: ./Scripts/format.sh not found or not executable." >&2
+  echo "[pre-commit] Make sure the script exists and has +x permission." >&2
+  exit 1
+fi
+
+# Re-stage any formatting changes for tracked files only
+git add -u
+
+exit 0

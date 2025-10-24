@@ -3,7 +3,7 @@ public final class P0496_Solution2 {
 //    nums2 = [1,3,4,2]
     public func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         var stack = [Int]()
-        var nextGreater = [Int:Int]()
+        var nextGreater = [Int: Int]()
         for item in nums2 {
             // 数组的左边是底部, 对应first, 右边是顶部对应last
             while let top = stack.last, top < item {

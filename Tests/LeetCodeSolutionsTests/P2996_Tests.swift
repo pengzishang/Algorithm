@@ -29,9 +29,8 @@ final class P2996_Tests: XCTestCase {
 
         // 边界测试用例5：最大值情况
         XCTAssertEqual(s.missingInteger([50, 49, 48]), 51)
-
     }
-    
+
     func test2() {
         let s = P2996_Solution2()
         // 这一组是证明我错误的一组
@@ -58,6 +57,5 @@ final class P2996_Tests: XCTestCase {
 
         // 边界测试用例5：最大值情况
         XCTAssertEqual(s.missingInteger([50, 49, 48]), 51)
-
     }
 }

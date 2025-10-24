@@ -4,7 +4,7 @@ public final class P0026_Solution2 {
     public func removeDuplicates(_ nums: inout [Int]) -> Int {
         var indexC = 0
         var indexP = 0
-        
+
         var prevRecord: Int? {
             didSet {
                 if oldValue != prevRecord, let prevRecord {

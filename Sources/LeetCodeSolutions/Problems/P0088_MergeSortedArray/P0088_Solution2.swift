@@ -5,20 +5,19 @@ public final class P0088_Solution2 {
         var p1 = 0
         var p2 = 0
         while p1 + p2 < m + n {
-            
-            var fitem : Int {
+            var fitem: Int {
                 if p1 >= m {
-                    return 1000
+                    1000
                 } else {
-                    return nums1[p1]
+                    nums1[p1]
                 }
             }
-            
-            var sitem : Int {
+
+            var sitem: Int {
                 if p2 >= n {
-                    return 1000
+                    1000
                 } else {
-                    return nums2[p2]
+                    nums2[p2]
                 }
             }
             if fitem <= sitem {
@@ -35,7 +34,7 @@ public final class P0088_Solution2 {
                 }
             }
         }
-        
+
         nums1 = empty
     }
 }

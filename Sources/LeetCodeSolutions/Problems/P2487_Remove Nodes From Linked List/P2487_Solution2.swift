@@ -11,11 +11,11 @@ public final class P2487_Solution2 {
             stack.append(curr!.val)
             curr = curr!.next
         }
-        
+
         var newStack: [Int] = []
         for item in stack {
             // 关键, 如果一个数比他左边大, 则不断循环, 直到把左边清空
-            while !newStack.isEmpty && newStack.last! < item {
+            while !newStack.isEmpty, newStack.last! < item {
                 newStack.removeLast()
             }
             newStack.append(item)

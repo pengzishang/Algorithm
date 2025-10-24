@@ -3,7 +3,7 @@ public final class P0026_Solution3 {
     public func removeDuplicates(_ nums: inout [Int]) -> Int {
         var indexC = 0
         var indexP = 0
-        
+
         var prevRecord: Int?
         var currRecord = nums[0]
         while indexC < nums.count {

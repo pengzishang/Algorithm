@@ -6,7 +6,7 @@ public final class P2996_Solution2 {
             return nums.first! + 1
         }
         // length,startIndex, 记录中间碰到的最大一段
-        var chainInfo = [Int:Int]()
+        var chainInfo = [Int: Int]()
         // 记录当前段的起点
         var startIndex = 0
         // 应该是记录前值
@@ -39,10 +39,10 @@ public final class P2996_Solution2 {
             maxLength = chainInfo[0]!
             longStartPoint = 0
         }
-        
+
         // 算那一段的和
         var sum = 0
-        for item in 0..<maxLength {
+        for item in 0 ..< maxLength {
             sum += nums[longStartPoint] + item
         }
         var maxResult = sum

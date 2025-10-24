@@ -1,8 +1,8 @@
 public final class P0027_Solution1 {
-    //buck, too much space
+    // buck, too much space
     public init() {}
     public func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
-        let info = nums.reduce([Int:Int]()) { partialResult, curr in
+        let info = nums.reduce([Int: Int]()) { partialResult, curr in
             var copyRes = partialResult
             if let amount = copyRes[curr] {
                 copyRes[curr] = amount + 1
@@ -13,7 +13,7 @@ public final class P0027_Solution1 {
         }
         nums = info.reduce([Int]()) { partialResult, pair in
             var copyRes = partialResult
-            copyRes.append(contentsOf: Array.init(repeating: pair.key, count: pair.value))
+            copyRes.append(contentsOf: Array(repeating: pair.key, count: pair.value))
             return copyRes
         }
         return nums.count

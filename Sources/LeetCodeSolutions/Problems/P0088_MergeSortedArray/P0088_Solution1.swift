@@ -11,8 +11,8 @@ public final class P0088_Solution1 {
             return
         }
         var empty: [Int] = nums1
-        var index = i+j+1
-        
+        var index = i + j + 1
+
         while index > 0 || i >= 0 || j >= 0 {
             if i < 0 {
                 empty[index] = nums2[j]
