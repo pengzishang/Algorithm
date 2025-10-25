@@ -35,4 +35,14 @@ public extension ListNode {
         }
         print(result.joined(separator: " -> ") + " -> nil")
     }
+
+    func printList() -> [Int] {
+        var node: ListNode? = self
+        var result: [Int] = []
+        while let current = node {
+            result.append(current.val)
+            node = current.next
+        }
+        return result
+    }
 }
