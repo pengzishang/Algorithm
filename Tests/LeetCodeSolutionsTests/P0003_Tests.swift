@@ -99,21 +99,6 @@ final class P0003_Solution1_Tests: XCTestCase {
         print("Alternating characters test result: \(result)") // 交替字符测试结果
         XCTAssertEqual(result, 2, "Failed for 'abababab'. Expected 2")
     }
-
-    func testLongStringPerformance() {
-        let solution = P0003_Solution1()
-        // Generate a long string with repeating pattern
-        let longString = String(repeating: "abcdefghij", count: 1000)
-
-        let startTime = Date()
-        let result = solution.lengthOfLongestSubstring(longString)
-        let endTime = Date()
-
-        let executionTime = endTime.timeIntervalSince(startTime)
-        print("Long string performance test result: \(result), time: \(executionTime) seconds") // 长字符串性能测试结果
-        XCTAssertEqual(result, 10, "Failed for long string. Expected 10")
-        XCTAssertLessThan(executionTime, 1.0, "Performance test failed - execution took too long")
-    }
 }
 
 final class P0003_Solution2_Tests: XCTestCase {

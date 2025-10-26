@@ -6,55 +6,57 @@ final class P0043_Solution1 {
         if num1 == "0" || num2 == "0" {
             return "0"
         }
-        let arr1 = num1.map { Int(String($0)) }.compactMap(\.self) // 123
-        let arr2 = num2.map { Int(String($0)) }.compactMap(\.self) // 45687
+        let digits1 = num1.map { Int(String($0)) }.compactMap(\.self) // 123
+        let digits2 = num2.map { Int(String($0)) }.compactMap(\.self) // 45687
         // 先处理低位比较符合自觉
-        var totalResult = [[Int]]()
-        for item2 in arr2 {
-            var tempRoundResult = [Int]()
-            for item1 in arr1 {
-                tempRoundResult.append(item1 * item2)
+        var intermediateResults = [[Int]]()
+        for digit2 in digits2 {
+            var productRow = [Int]()
+            for digit1 in digits1 {
+                productRow.append(digit1 * digit2)
             }
-            tempRoundResult = tempRoundResult.reversed()
+            productRow = productRow.reversed()
 
-            for count in 0 ..< tempRoundResult.count - 1 {
-                let residue = tempRoundResult[count] % 10
-                let carry = tempRoundResult[count] / 10
-                tempRoundResult[count] = residue
-                tempRoundResult[count + 1] = tempRoundResult[count + 1] + carry
+            for index in 0 ..< productRow.count - 1 {
+                let remainder = productRow[index] % 10
+                let carry = productRow[index] / 10
+                productRow[index] = remainder
+                productRow[index + 1] = productRow[index + 1] + carry
             }
-            totalResult.append(tempRoundResult)
+            intermediateResults.append(productRow)
         }
 
-        for item in 0 ..< totalResult.count {
-            totalResult[totalResult.count - item - 1].insert(contentsOf: Array(repeating: 0, count: item), at: 0)
+        for index in 0 ..< intermediateResults.count {
+            intermediateResults[intermediateResults.count - index - 1]
+                .insert(contentsOf: Array(repeating: 0, count: index),
+                        at: 0)
         }
 
-        let maxLength = totalResult.map(\.count).max()
+        let maxLength = intermediateResults.map(\.count).max()
 
         var finalResult = [Int]()
 
         var carry = 0
-        for round in 0 ... maxLength! {
-            if round == maxLength {
+        for position in 0 ... maxLength! {
+            if position == maxLength {
                 if carry != 0 {
                     finalResult.append(carry)
                 }
             } else {
-                var tempSum = 0
-                for item in totalResult {
-                    let value = if item.count > round { item[round] } else { 0 }
-                    tempSum += value
+                var digitSum = 0
+                for row in intermediateResults {
+                    let value = if row.count > position { row[position] } else { 0 }
+                    digitSum += value
                 }
-                tempSum += carry
-                carry = tempSum / 10
-                tempSum = tempSum % 10
-                finalResult.append(tempSum)
+                digitSum += carry
+                carry = digitSum / 10
+                digitSum = digitSum % 10
+                finalResult.append(digitSum)
             }
         }
 
-        let s = finalResult.map { String($0) }.reversed().flatMap(\.self)
+        let resultString = finalResult.map { String($0) }.reversed().flatMap(\.self)
 
-        return String(s)
+        return String(resultString)
     }
 }
