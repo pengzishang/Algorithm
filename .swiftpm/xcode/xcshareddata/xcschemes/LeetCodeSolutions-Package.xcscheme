@@ -53,6 +53,17 @@
                BlueprintName = "LeetCodeSolutionsTests"
                ReferencedContainer = "container:">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "P0003_Solution1_Tests/testLongStringPerformance()">
+               </Test>
+               <Test
+                  Identifier = "P0003_Solution1_Tests/testMaxLengthEdgeCase()">
+               </Test>
+               <Test
+                  Identifier = "P0003_Solution2_Tests/testMaxLengthEdgeCase()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

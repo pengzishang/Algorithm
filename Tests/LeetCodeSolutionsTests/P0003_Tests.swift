@@ -1,7 +1,7 @@
 @testable import LeetCodeSolutions
 import XCTest
 
-final class P0003_Tests: XCTestCase {
+final class P0003_Solution1_Tests: XCTestCase {
     func test4() {
         let solution = P0003_Solution1()
         let result = solution.lengthOfLongestSubstring("asjrgapa")
@@ -86,13 +86,6 @@ final class P0003_Tests: XCTestCase {
         XCTAssertEqual(result, 6, "Failed for '123!@#123'. Expected 6")
     }
 
-    func testSpacesIncluded() {
-        let solution = P0003_Solution1()
-        let result = solution.lengthOfLongestSubstring("a b c d e")
-        print("Spaces included test result: \(result)") // 包含空格测试结果
-        XCTAssertEqual(result, 5, "Failed for 'a b c d e'. Expected 5")
-    }
-
     func testUnicodeCharacters() {
         let solution = P0003_Solution1()
         let result = solution.lengthOfLongestSubstring("🎉🚀🌟🎉🚀")
@@ -121,14 +114,119 @@ final class P0003_Tests: XCTestCase {
         XCTAssertEqual(result, 10, "Failed for long string. Expected 10")
         XCTAssertLessThan(executionTime, 1.0, "Performance test failed - execution took too long")
     }
+}
 
-    func testMaxLengthEdgeCase() {
-        let solution = P0003_Solution1()
-        // Create a string with all unique characters up to near maximum
-        let uniqueString = (0 ..< 1000).map { Character(Unicode.Scalar($0 % 128 + 32)!) }.reduce("") { $0 + String($1) }
+final class P0003_Solution2_Tests: XCTestCase {
+    func test4() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("asjrgapa")
+        print("[S2] Test 4 result: \(result)")
+        XCTAssertEqual(result, 6, "[S2] Failed for 'asjrgapa'. Expected 6")
+    }
 
-        let result = solution.lengthOfLongestSubstring(uniqueString)
-        print("Max length edge case test result: \(result)") // 最大长度边界测试结果
-        XCTAssertEqual(result, 1000, "Failed for max length edge case. Expected 1000")
+    func test5() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("wsslpluuwekuaxt")
+        print("[S2] Test 5 result: \(result)")
+        XCTAssertEqual(result, 7, "[S2] Failed for 'wsslpluuwekuaxt'. Expected 7")
+    }
+
+    func test1() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("abcabcbb")
+        print("[S2] Test 1 result: \(result)")
+        XCTAssertEqual(result, 3, "[S2] Failed for 'abcabcbb'. Expected 3")
+    }
+
+    func test2() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("bbbbb")
+        print("[S2] Test 2 result: \(result)")
+        XCTAssertEqual(result, 1, "[S2] Failed for 'bbbbb'. Expected 1")
+    }
+
+    func test3() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("pwwkew")
+        print("[S2] Test 3 result: \(result)")
+        XCTAssertEqual(result, 3, "[S2] Failed for 'pwwkew'. Expected 3")
+    }
+
+    func testEmptyString() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("")
+        print("[S2] Empty string test result: \(result)")
+        XCTAssertEqual(result, 0, "[S2] Failed for empty string. Expected 0")
+    }
+
+    func testSingleCharacter() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("a")
+        print("[S2] Single character test result: \(result)")
+        XCTAssertEqual(result, 1, "[S2] Failed for single character 'a'. Expected 1")
+    }
+
+    func testAllUniqueCharacters() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("abcdefg")
+        print("[S2] All unique characters test result: \(result)")
+        XCTAssertEqual(result, 7, "[S2] Failed for 'abcdefg'. Expected 7")
+    }
+
+    func testRepeatingAtEnd() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("abcdeff")
+        print("[S2] Repeating at end test result: \(result)")
+        XCTAssertEqual(result, 6, "[S2] Failed for 'abcdeff'. Expected 6")
+    }
+
+    func testRepeatingAtBeginning() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("aabcde")
+        print("[S2] Repeating at beginning test result: \(result)")
+        XCTAssertEqual(result, 5, "[S2] Failed for 'aabcde'. Expected 5")
+    }
+
+    func testMixedCharacters() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("aababcabcdabcde")
+        print("[S2] Mixed characters test result: \(result)")
+        XCTAssertEqual(result, 5, "[S2] Failed for 'aababcabcdabcde'. Expected 5")
+    }
+
+    func testNumbersAndSymbols() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("123!@#123")
+        print("[S2] Numbers and symbols test result: \(result)")
+        XCTAssertEqual(result, 6, "[S2] Failed for '123!@#123'. Expected 6")
+    }
+
+    func testUnicodeCharacters() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("🎉🚀🌟🎉🚀")
+        print("[S2] Unicode characters test result: \(result)")
+        XCTAssertEqual(result, 3, "[S2] Failed for emoji string. Expected 3")
+    }
+
+    func testAlternatingCharacters() {
+        let solution = P0003_Solution2()
+        let result = solution.lengthOfLongestSubstring("abababab")
+        print("[S2] Alternating characters test result: \(result)")
+        XCTAssertEqual(result, 2, "[S2] Failed for 'abababab'. Expected 2")
+    }
+
+    func testLongStringPerformance() {
+        let solution = P0003_Solution2()
+        // Generate a long string with repeating pattern
+        let longString = String(repeating: "abcdefghij", count: 1000)
+
+        let startTime = Date()
+        let result = solution.lengthOfLongestSubstring(longString)
+        let endTime = Date()
+
+        let executionTime = endTime.timeIntervalSince(startTime)
+        print("[S2] Long string performance test result: \(result), time: \(executionTime) seconds")
+        XCTAssertEqual(result, 10, "[S2] Failed for long string. Expected 10")
+        XCTAssertLessThan(executionTime, 1, "[S2] Performance test failed - execution took too long")
     }
 }

@@ -1,5 +1,6 @@
 final class P0003_Solution1 {
     // 性能没法过, 如果长度过长
+
     func lengthOfLongestSubstring(_ s: String) -> Int {
         var copyS = s
         var info = Set<Character>()
