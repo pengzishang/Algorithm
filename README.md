@@ -743,6 +743,7 @@ MIT © 2025 Zishang Peng
 - 👤 **作者 Author**: Zishang Peng
 - 🔗 **GitHub**: [@pengzishang](https://github.com/pengzishang)
 - 📦 **项目主页 Repository**: [Algorithm](https://github.com/pengzishang/Algorithm)
+- 🔒 **安全策略 Security Policy**: [SECURITY.md](SECURITY.md)
 
 ---
 
