@@ -22,6 +22,17 @@
 
 ---
 
+## 社区与贡献 🤝 Community & Contribution
+
+欢迎所有形式的贡献！在参与前，请先阅读以下文档以确保协作顺畅：
+
+- 📜 行为准则 Code of Conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- 🤝 贡献指南 Contributing Guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- 🔒 安全策略 Security Policy: [SECURITY.md](SECURITY.md)
+
+如发现安全相关问题，请按安全策略中的指引私下报告，我们会尽快响应。
+
+---
 English
 -------
 
@@ -274,8 +285,6 @@ bash Scripts/new_problem.sh
    - Test file: `Tests/LeetCodeSolutionsTests/P{Number}_Tests.swift`
 
 ### 方法二：手动创建 Method 2: Manual Creation
-
-**中文步骤 Chinese Steps:**
 
 **中文步骤 Chinese Steps:**
 
@@ -728,8 +737,6 @@ This project adopts an engineering approach to organize code, with complete test
 
 ## 许可证 📜 License
 
-## 许可证 📜 License
-
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -756,12 +763,14 @@ MIT © 2025 Zishang Peng
 - ✨ 实现 19 道 LeetCode 题目
 - ✨ 添加 CI/CD 配置
 - ✨ 完善项目文档
+ - ✨ 新增社区健康文件：CODE_OF_CONDUCT.md、CONTRIBUTING.md、SECURITY.md
 
 **English:**
 - ✨ Project initialization
 - ✨ Implemented 19 LeetCode problems
 - ✨ Added CI/CD configuration
 - ✨ Improved project documentation
+ - ✨ Added community health files: CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md
 
 ---
 
