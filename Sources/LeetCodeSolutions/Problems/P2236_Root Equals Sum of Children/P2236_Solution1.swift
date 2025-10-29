@@ -15,6 +15,6 @@
  */
 final class P2236_Solution1 {
     func checkTree(_ root: TreeNode?) -> Bool {
-        
+        root?.val == (root?.left?.val)! + (root?.right?.val)!
     }
 }
