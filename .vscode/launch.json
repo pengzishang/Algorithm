@@ -6,8 +6,9 @@
             "args": [],
             "cwd": "${workspaceFolder:Algorithm}",
             "name": "Debug Sandbox",
-            "program": "${workspaceFolder:Algorithm}/.build/debug/Sandbox",
-            "preLaunchTask": "swift: Build Debug Sandbox"
+            "preLaunchTask": "swift: Build Debug Sandbox",
+            "target": "Sandbox",
+            "configuration": "debug"
         },
         {
             "type": "swift",
@@ -15,8 +16,9 @@
             "args": [],
             "cwd": "${workspaceFolder:Algorithm}",
             "name": "Release Sandbox",
-            "program": "${workspaceFolder:Algorithm}/.build/release/Sandbox",
-            "preLaunchTask": "swift: Build Release Sandbox"
+            "preLaunchTask": "swift: Build Release Sandbox",
+            "target": "Sandbox",
+            "configuration": "release"
         }
     ]
 }
