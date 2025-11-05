@@ -1,5 +1,5 @@
-import XCTest
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P2586_Solution1_Tests: XCTestCase {
     func testExample1() {
@@ -27,7 +27,7 @@ final class P2586_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for words: \(words), left: \(left), right: \(right)")
     }
-    
+
     func testNoVowelStringsInRange() {
         // 中文: 测试范围内没有元音字符串的情况
         // English: Test case with no vowel strings in the range
@@ -170,7 +170,7 @@ final class P2586_Solution1_Tests: XCTestCase {
         let words = ["eat", "tea", "eye", "yay"]
         let left = 0
         let right = 3
-        let expected = 2
+        let expected = 1
         measure {
             let result = s.vowelStrings(words, left, right)
             print(result)
@@ -215,7 +215,7 @@ final class P2586_Solution1_Tests: XCTestCase {
         let words = ["understanding", "education", "international"]
         let left = 0
         let right = 2
-        let expected = 2
+        let expected = 0
         measure {
             let result = s.vowelStrings(words, left, right)
             print(result)
@@ -237,7 +237,7 @@ final class P2586_Solution1_Tests: XCTestCase {
             XCTAssertEqual(result, expected, "Failed for words: \(words), left: \(left), right: \(right)")
         }
     }
-    
+
     func testRangeIncludesOneVowel() {
         // 中文: 测试范围只包含一个元音字符串的情况
         // English: Test case where the range includes exactly one vowel string
@@ -282,7 +282,7 @@ final class P2586_Solution1_Tests: XCTestCase {
             XCTAssertEqual(result, expected, "Failed for words: \(words), left: \(left), right: \(right)")
         }
     }
-    
+
     func testLeftEqualsRightBoundary() {
         // 中文: 测试 left 和 right 相等且在数组末尾的情况
         // English: Test case where left equals right at the end of the array
@@ -297,7 +297,7 @@ final class P2586_Solution1_Tests: XCTestCase {
             XCTAssertEqual(result, expected, "Failed for words: \(words), left: \(left), right: \(right)")
         }
     }
-    
+
     func testLeftEqualsRightBoundaryStart() {
         // 中文: 测试 left 和 right 相等且在数组开头的情况
         // English: Test case where left equals right at the start of the array
