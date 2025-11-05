@@ -1,13 +1,13 @@
-import XCTest
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P0867_Solution1_Tests: XCTestCase {
     func testExample1() {
         // 示例 1: 3x3 方阵
         // Example 1: 3x3 square matrix
         let s = P0867_Solution1()
-        let matrix = [[1,2,3],[4,5,6],[7,8,9]]
-        let expected = [[1,4,7],[2,5,8],[3,6,9]]
+        let matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        let expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
         let result = s.transpose(matrix)
         print(result)
         XCTAssertEqual(result, expected, "Failed for example 1: 3x3 square matrix")
@@ -17,20 +17,20 @@ final class P0867_Solution1_Tests: XCTestCase {
         // 示例 2: 2x3 矩形矩阵
         // Example 2: 2x3 rectangular matrix
         let s = P0867_Solution1()
-        let matrix = [[1,2,3],[4,5,6]]
-        let expected = [[1,4],[2,5],[3,6]]
+        let matrix = [[1, 2, 3], [4, 5, 6]]
+        let expected = [[1, 4], [2, 5], [3, 6]]
         let result = s.transpose(matrix)
         print(result)
         XCTAssertEqual(result, expected, "Failed for example 2: 2x3 rectangular matrix")
     }
-    
+
     func testSingleElementMatrix_1() {
         // 测试用例 1: 单个元素的矩阵
         // Test Case 1: Matrix with a single element
         let s = P0867_Solution1()
         let matrix = [[5]]
         let expected = [[5]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -44,7 +44,7 @@ final class P0867_Solution1_Tests: XCTestCase {
         let s = P0867_Solution1()
         let matrix = [[1, 2, 3, 4]]
         let expected = [[1], [2], [3], [4]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -58,7 +58,7 @@ final class P0867_Solution1_Tests: XCTestCase {
         let s = P0867_Solution1()
         let matrix = [[1], [2], [3], [4]]
         let expected = [[1, 2, 3, 4]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -72,21 +72,21 @@ final class P0867_Solution1_Tests: XCTestCase {
         let s = P0867_Solution1()
         let matrix = [[-1, -2], [-3, -4]]
         let expected = [[-1, -3], [-2, -4]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
             XCTAssertEqual(result, expected, "Failed for Test Case 4: Square matrix with negative numbers")
         }
     }
-    
+
     func testSquareMatrixWithZeros_5() {
         // 测试用例 5: 包含零的方阵
         // Test Case 5: Square matrix with zeros
         let s = P0867_Solution1()
         let matrix = [[0, 1], [0, 0]]
         let expected = [[0, 0], [1, 0]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -100,7 +100,7 @@ final class P0867_Solution1_Tests: XCTestCase {
         let s = P0867_Solution1()
         let matrix = [[1, -2, 0], [4, 5, -6]]
         let expected = [[1, 4], [-2, 5], [0, -6]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -114,21 +114,21 @@ final class P0867_Solution1_Tests: XCTestCase {
         let s = P0867_Solution1()
         let matrix = [[1, 2], [3, 4], [5, 6]]
         let expected = [[1, 3, 5], [2, 4, 6]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
             XCTAssertEqual(result, expected, "Failed for Test Case 7: Tall matrix")
         }
     }
-    
+
     func testWideMatrix_8() {
         // 测试用例 8: 宽矩阵 (列数 > 行数)
         // Test Case 8: Wide matrix (cols > rows)
         let s = P0867_Solution1()
         let matrix = [[10, 20, 30, 40], [50, 60, 70, 80]]
         let expected = [[10, 50], [20, 60], [30, 70], [40, 80]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -142,7 +142,7 @@ final class P0867_Solution1_Tests: XCTestCase {
         let s = P0867_Solution1()
         let matrix = [[1, 2], [3, 4]]
         let expected = [[1, 3], [2, 4]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -156,7 +156,7 @@ final class P0867_Solution1_Tests: XCTestCase {
         let s = P0867_Solution1()
         let matrix = [[7, 7, 7], [7, 7, 7]]
         let expected = [[7, 7], [7, 7], [7, 7]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -170,21 +170,21 @@ final class P0867_Solution1_Tests: XCTestCase {
         let s = P0867_Solution1()
         let matrix = [[1_000_000_000, 0], [-1_000_000_000, 1]]
         let expected = [[1_000_000_000, -1_000_000_000], [0, 1]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
             XCTAssertEqual(result, expected, "Failed for Test Case 11: Matrix with large numbers")
         }
     }
-    
+
     func test4x2Matrix_12() {
         // 测试用例 12: 4x2 矩阵
         // Test Case 12: 4x2 matrix
         let s = P0867_Solution1()
         let matrix = [[1, 2], [3, 4], [5, 6], [7, 8]]
         let expected = [[1, 3, 5, 7], [2, 4, 6, 8]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
@@ -196,8 +196,8 @@ final class P0867_Solution1_Tests: XCTestCase {
         // 性能测试用例 13: 1x1000 矩阵
         // Performance Test Case 13: 1x1000 matrix
         let s = P0867_Solution1()
-        let matrix = [Array(1...1000)]
-        let expected = (1...1000).map { [$0] }
+        let matrix = [Array(1 ... 1000)]
+        let expected = (1 ... 1000).map { [$0] }
 
         measure {
             let result = s.transpose(matrix)
@@ -213,8 +213,8 @@ final class P0867_Solution1_Tests: XCTestCase {
         // 性能测试用例 14: 1000x1 矩阵
         // Performance Test Case 14: 1000x1 matrix
         let s = P0867_Solution1()
-        let matrix = (1...1000).map { [$0] }
-        let expected = [Array(1...1000)]
+        let matrix = (1 ... 1000).map { [$0] }
+        let expected = [Array(1 ... 1000)]
 
         measure {
             let result = s.transpose(matrix)
@@ -223,7 +223,7 @@ final class P0867_Solution1_Tests: XCTestCase {
         print("Performance test with 1000x1 matrix completed.")
         XCTAssertEqual(result, expected, "Failed for Performance Test Case 14: 1000x1 matrix")
     }
-    
+
     func testPerformanceLargeSquare_15() {
         // 性能测试用例 15: 300x300 矩阵
         // Performance Test Case 15: 300x300 matrix
@@ -232,8 +232,8 @@ final class P0867_Solution1_Tests: XCTestCase {
         let cols = 300
         var matrix = Array(repeating: Array(repeating: 0, count: cols), count: rows)
         var expected = Array(repeating: Array(repeating: 0, count: rows), count: cols)
-        for i in 0..<rows {
-            for j in 0..<cols {
+        for i in 0 ..< rows {
+            for j in 0 ..< cols {
                 let value = i * cols + j
                 matrix[i][j] = value
                 expected[j][i] = value
@@ -256,8 +256,8 @@ final class P0867_Solution1_Tests: XCTestCase {
         let cols = 1000
         var matrix = Array(repeating: Array(repeating: 0, count: cols), count: rows)
         var expected = Array(repeating: Array(repeating: 0, count: rows), count: cols)
-        for i in 0..<rows {
-            for j in 0..<cols {
+        for i in 0 ..< rows {
+            for j in 0 ..< cols {
                 let value = i * cols + j
                 matrix[i][j] = value
                 expected[j][i] = value
@@ -280,8 +280,8 @@ final class P0867_Solution1_Tests: XCTestCase {
         let cols = 100
         var matrix = Array(repeating: Array(repeating: 0, count: cols), count: rows)
         var expected = Array(repeating: Array(repeating: 0, count: rows), count: cols)
-        for i in 0..<rows {
-            for j in 0..<cols {
+        for i in 0 ..< rows {
+            for j in 0 ..< cols {
                 let value = i * cols + j
                 matrix[i][j] = value
                 expected[j][i] = value
@@ -304,8 +304,8 @@ final class P0867_Solution1_Tests: XCTestCase {
         let cols = 500
         var matrix = Array(repeating: Array(repeating: 0, count: cols), count: rows)
         var expected = Array(repeating: Array(repeating: 0, count: rows), count: cols)
-        for i in 0..<rows {
-            for j in 0..<cols {
+        for i in 0 ..< rows {
+            for j in 0 ..< cols {
                 let value = i * cols + j
                 matrix[i][j] = value
                 expected[j][i] = value
@@ -328,8 +328,8 @@ final class P0867_Solution1_Tests: XCTestCase {
         let cols = 100
         var matrix = Array(repeating: Array(repeating: 0, count: cols), count: rows)
         var expected = Array(repeating: Array(repeating: 0, count: rows), count: cols)
-        for i in 0..<rows {
-            for j in 0..<cols {
+        for i in 0 ..< rows {
+            for j in 0 ..< cols {
                 let value = i * cols + j
                 matrix[i][j] = value
                 expected[j][i] = value
@@ -356,7 +356,7 @@ final class P0867_Solution1_Tests: XCTestCase {
         // Creating a regular matrix here to satisfy constraints
         let matrix = [[1, 2], [3, 4]]
         let expected = [[1, 3], [2, 4]]
-        
+
         measure {
             let result = s.transpose(matrix)
             print(result)
