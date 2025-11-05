@@ -1,5 +1,5 @@
-import XCTest
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P0852_Solution1_Tests: XCTestCase {
     // Test case from example 1
@@ -267,12 +267,12 @@ final class P0852_Solution1_Tests: XCTestCase {
         print("Result for arr=\(arr) is \(result ?? -1)")
         XCTAssertEqual(result, expected, "Failed for peak at second element with input \(arr)")
     }
-    
+
     // Performance test with a large array, peak in the middle
     // 性能测试：大型数组，峰值在中间
     func testLargeArrayPeakInMiddle_20() {
         let s = P0852_Solution1()
-        let arr = Array(0...49999) + Array((0...49998).reversed())
+        let arr = Array(0 ... 49999) + Array((0 ... 49998).reversed())
         let expected = 49999
         var result: Int?
         measure {
@@ -286,7 +286,7 @@ final class P0852_Solution1_Tests: XCTestCase {
     // 性能测试：大型数组，峰值靠近开头
     func testLargeArrayPeakAtStart_21() {
         let s = P0852_Solution1()
-        let arr = [0, 100000] + Array(stride(from: 99999, to: 0, by: -1))
+        let arr = [0, 100_000] + Array(stride(from: 99999, to: 0, by: -1))
         let expected = 1
         var result: Int?
         measure {
@@ -300,7 +300,7 @@ final class P0852_Solution1_Tests: XCTestCase {
     // 性能测试：大型数组，峰值靠近结尾
     func testLargeArrayPeakAtEnd_22() {
         let s = P0852_Solution1()
-        let arr = Array(0...99997) + [100000, 0]
+        let arr = Array(0 ... 99997) + [100_000, 0]
         let expected = 99998
         var result: Int?
         measure {
@@ -309,17 +309,17 @@ final class P0852_Solution1_Tests: XCTestCase {
         print("Result for large array with peak at end is \(result ?? -1)")
         XCTAssertEqual(result, expected, "Failed for large array with peak near the end")
     }
-    
+
     // Performance test with large numbers in a large array
     // 性能测试：包含大数值的大型数组
     func testLargeArrayWithLargeNumbers_23() {
         let s = P0852_Solution1()
         var ascendingPart = [Int]()
-        for i in 0..<50000 {
+        for i in 0 ..< 50000 {
             ascendingPart.append(i * 10)
         }
         var descendingPart = [Int]()
-        for i in (0..<49999).reversed() {
+        for i in (0 ..< 49999).reversed() {
             descendingPart.append(i * 10 + 5)
         }
         let arr = ascendingPart + descendingPart
