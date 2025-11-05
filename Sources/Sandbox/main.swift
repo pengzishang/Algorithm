@@ -15,6 +15,6 @@ import LeetCodeSolutions
 // let newHead = P2487_Solution2().removeNodes(head)
 // newHead?.printList()
 
-let nums1 = [4, 1, 2], nums2 = [1, 3, 4, 2]
-let rArray = P2996_Solution1().missingInteger([1, 2, 3, 2, 5])
+// let nums1 = [4, 1, 2], nums2 = [1, 3, 4, 2]
+// let rArray = P2996_Solution1().missingInteger([1, 2, 3, 2, 5])
 // [-1,3,-1]

@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/badge/platform-macOS%2013%2B-lightgrey.svg)](https://www.apple.com/macos/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> 一个基于 Swift Package Manager 的 LeetCode 算法题解集合，包含 **19** 道题目的多种解法实现。
+> 一个基于 Swift Package Manager 的 LeetCode 算法题解集合，包含 **40** 道题目的多种解法实现。
 >
 > 📚 **[查看 Wiki 获取详细文档和学习资源](../../wiki)** | **[View Wiki for detailed docs and resources](../../wiki)**
 
@@ -92,9 +92,9 @@ open Package.swift
 
 ## 已实现题目 📚 Solved Problems
 
-目前已实现 **19** 道 LeetCode 题目，涵盖数组、字符串、链表、数学等多个类别。
+目前已实现 **40** 道 LeetCode 题目，涵盖数组、字符串、链表、数学等多个类别。
 
-Currently implemented **19** LeetCode problems, covering arrays, strings, linked lists, math, and more.
+Currently implemented **40** LeetCode problems, covering arrays, strings, linked lists, math, and more.
 
 | 题号 | 题目 | 难度 | 标签 |
 |------|------|------|------|
@@ -107,14 +107,36 @@ Currently implemented **19** LeetCode problems, covering arrays, strings, linked
 | [27](Sources/LeetCodeSolutions/Problems/P0027_RemoveElements/) | Remove Element | 简单 Easy | 数组, 双指针 Array, Two Pointers |
 | [43](Sources/LeetCodeSolutions/Problems/P0043_Multiply%20Strings/) | Multiply Strings | 中等 Medium | 字符串, 数学 String, Math |
 | [50](Sources/LeetCodeSolutions/Problems/P0050_Pow(x,%20n)/) | Pow(x, n) | 中等 Medium | 数学, 递归 Math, Recursion |
+| [66](Sources/LeetCodeSolutions/Problems/P0066_Plus%20One/) | Plus One | 简单 Easy | 数组, 数学 Array, Math |
+| [67](Sources/LeetCodeSolutions/Problems/P0067_Add%20Binary/) | Add Binary | 简单 Easy | 字符串, 数学 String, Math |
 | [88](Sources/LeetCodeSolutions/Problems/P0088_MergeSortedArray/) | Merge Sorted Array | 简单 Easy | 数组, 双指针 Array, Two Pointers |
+| [137](Sources/LeetCodeSolutions/Problems/P0137_Single%20Number%20II/) | Single Number II | 中等 Medium | 位运算, 数组 Bit Manipulation, Array |
 | [203](Sources/LeetCodeSolutions/Problems/P0203_RemoveLinkedListElements/) | Remove Linked List Elements | 简单 Easy | 链表 Linked List |
+| [231](Sources/LeetCodeSolutions/Problems/P0231_Power%20of%20Two/) | Power of Two | 简单 Easy | 位运算, 数学 Bit Manipulation, Math |
 | [237](Sources/LeetCodeSolutions/Problems/P0237_DeleteNodeInALinkedList/) | Delete Node in a Linked List | 中等 Medium | 链表 Linked List |
+| [258](Sources/LeetCodeSolutions/Problems/P0258_Add%20Digits/) | Add Digits | 简单 Easy | 数学 Math |
+| [260](Sources/LeetCodeSolutions/Problems/P0260_Single%20Number%20III/) | Single Number III | 中等 Medium | 位运算, 数组 Bit Manipulation, Array |
+| [263](Sources/LeetCodeSolutions/Problems/P0263_Ugly%20Number/) | Ugly Number | 简单 Easy | 数学 Math |
 | [283](Sources/LeetCodeSolutions/Problems/P0283_MoveZeroes/) | Move Zeroes | 简单 Easy | 数组, 双指针 Array, Two Pointers |
+| [326](Sources/LeetCodeSolutions/Problems/P0326_Power%20of%20Three/) | Power of Three | 简单 Easy | 数学, 递归 Math, Recursion |
+| [342](Sources/LeetCodeSolutions/Problems/P0342_Power%20of%20Four/) | Power of Four | 简单 Easy | 位运算, 数学 Bit Manipulation, Math |
 | [496](Sources/LeetCodeSolutions/Problems/P0496_Next%20Greater%20Element%20I/) | Next Greater Element I | 简单 Easy | 栈, 数组 Stack, Array |
+| [709](Sources/LeetCodeSolutions/Problems/P0709_To%20Lower%20Case/) | To Lower Case | 简单 Easy | 字符串 String |
+| [852](Sources/LeetCodeSolutions/Problems/P0852_Peak%20Index%20in%20a%20Mountain%20Array/) | Peak Index in a Mountain Array | 中等 Medium | 数组, 二分查找 Array, Binary Search |
+| [867](Sources/LeetCodeSolutions/Problems/P0867_Transpose%20Matrix/) | Transpose Matrix | 简单 Easy | 数组, 矩阵 Array, Matrix |
+| [1281](Sources/LeetCodeSolutions/Problems/P1281_Subtract%20the%20Product%20and%20Sum%20of%20Digits%20of%20an%20Integer/) | Subtract the Product and Sum of Digits of an Integer | 简单 Easy | 数学 Math |
+| [1422](Sources/LeetCodeSolutions/Problems/P1422_Maximum%20Score%20After%20Splitting%20a%20String/) | Maximum Score After Splitting a String | 简单 Easy | 字符串, 前缀和 String, Prefix Sum |
+| [1470](Sources/LeetCodeSolutions/Problems/P1470_Shuffle%20the%20Array/) | Shuffle the Array | 简单 Easy | 数组 Array |
+| [1486](Sources/LeetCodeSolutions/Problems/P1486_XOR%20Operation%20in%20an%20Array/) | XOR Operation in an Array | 简单 Easy | 位运算, 数学 Bit Manipulation, Math |
+| [1512](Sources/LeetCodeSolutions/Problems/P1512_Number%20of%20Good%20Pairs/) | Number of Good Pairs | 简单 Easy | 数组, 哈希表 Array, Hash Table |
+| [1534](Sources/LeetCodeSolutions/Problems/P1534_Count%20Good%20Triplets/) | Count Good Triplets | 简单 Easy | 数组, 枚举 Array, Enumeration |
 | [2235](Sources/LeetCodeSolutions/Problems/P2235_Add%20Two%20Integers/) | Add Two Integers | 简单 Easy | 数学 Math |
+| [2236](Sources/LeetCodeSolutions/Problems/P2236_Root%20Equals%20Sum%20of%20Children/) | Root Equals Sum of Children | 简单 Easy | 树 Tree |
+| [2413](Sources/LeetCodeSolutions/Problems/P2413_Smallest%20Even%20Multiple/) | Smallest Even Multiple | 简单 Easy | 数学 Math |
 | [2460](Sources/LeetCodeSolutions/Problems/P2460_ApplyOpertions/) | Apply Operations to an Array | 简单 Easy | 数组, 模拟 Array, Simulation |
+| [2469](Sources/LeetCodeSolutions/Problems/P2469_Convert%20the%20Temperature/) | Convert the Temperature | 简单 Easy | 数学 Math |
 | [2487](Sources/LeetCodeSolutions/Problems/P2487_Remove%20Nodes%20From%20Linked%20List/) | Remove Nodes From Linked List | 中等 Medium | 链表, 栈 Linked List, Stack |
+| [2586](Sources/LeetCodeSolutions/Problems/P2586_Count%20the%20Number%20of%20Vowel%20Strings%20in%20Range/) | Count the Number of Vowel Strings in Range | 简单 Easy | 数组, 字符串 Array, String |
 | [2996](Sources/LeetCodeSolutions/Problems/P2996_Smallest%20Missing%20Integer%20Greater%20Than%20Sequential%20Prefix%20Sum/) | Smallest Missing Integer Greater Than Sequential Prefix Sum | 简单 Easy | 数组, 哈希表 Array, Hash Table |
 | [3217](Sources/LeetCodeSolutions/Problems/P3217_Delete%20Nodes%20From%20Linked%20List%20Present%20in%20Array/) | Delete Nodes From Linked List Present in Array | 中等 Medium | 链表, 哈希表 Linked List, Hash Table |
 
@@ -760,17 +782,17 @@ MIT © 2025 Zishang Peng
 
 **中文 Chinese:**
 - ✨ 项目初始化
-- ✨ 实现 19 道 LeetCode 题目
+- ✨ 实现 40 道 LeetCode 题目
 - ✨ 添加 CI/CD 配置
 - ✨ 完善项目文档
- - ✨ 新增社区健康文件：CODE_OF_CONDUCT.md、CONTRIBUTING.md、SECURITY.md
+- ✨ 新增社区健康文件：CODE_OF_CONDUCT.md、CONTRIBUTING.md、SECURITY.md
 
 **English:**
 - ✨ Project initialization
-- ✨ Implemented 19 LeetCode problems
+- ✨ Implemented 40 LeetCode problems
 - ✨ Added CI/CD configuration
 - ✨ Improved project documentation
- - ✨ Added community health files: CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md
+- ✨ Added community health files: CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md
 
 ---
 

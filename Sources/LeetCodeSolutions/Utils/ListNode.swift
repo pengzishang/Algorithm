@@ -45,4 +45,14 @@ public extension ListNode {
         }
         return result
     }
+
+    func toArray() -> [Int] {
+        var node: ListNode? = self
+        var result: [Int] = []
+        while let current = node {
+            result.append(current.val)
+            node = current.next
+        }
+        return result
+    }
 }
