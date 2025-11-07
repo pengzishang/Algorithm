@@ -1,5 +1,5 @@
-import XCTest
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P1456_Solution1_Tests: XCTestCase {
     // 示例 1：s = "abciiidef", k = 3, 预期输出：3
@@ -37,7 +37,7 @@ final class P1456_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed on example 3")
     }
-    
+
     // 示例 4：s = "rhythms", k = 4, 预期输出：0
     // Example 4: s = "rhythms", k = 4, Expected output: 0
     func testExample4() {
@@ -61,7 +61,7 @@ final class P1456_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed on example 5")
     }
-    
+
     // 附加测试用例 1: k 等于 1
     // Additional Test Case 1: k is 1
     func testKIsOne1() {
@@ -103,7 +103,7 @@ final class P1456_Solution1_Tests: XCTestCase {
             XCTAssertEqual(result, expected, "Failed for string with no vowels")
         }
     }
-    
+
     // 附加测试用例 4: 字符串中全是元音
     // Additional Test Case 4: String with all vowels
     func testAllVowelsInString4() {
@@ -117,7 +117,7 @@ final class P1456_Solution1_Tests: XCTestCase {
             XCTAssertEqual(result, expected, "Failed for string with all vowels")
         }
     }
-    
+
     // 附加测试用例 5: 元音在字符串开头
     // Additional Test Case 5: Vowels at the start of the string
     func testVowelsAtStart5() {
@@ -131,7 +131,7 @@ final class P1456_Solution1_Tests: XCTestCase {
             XCTAssertEqual(result, expected, "Failed for vowels at the start")
         }
     }
-    
+
     // 附加测试用例 6: 元音在字符串结尾
     // Additional Test Case 6: Vowels at the end of the string
     func testVowelsAtEnd6() {
@@ -139,13 +139,13 @@ final class P1456_Solution1_Tests: XCTestCase {
             let s = P1456_Solution1()
             let inputS = "exampleia"
             let k = 3
-            let expected = 2
+            let expected = 3
             let result = s.maxVowels(inputS, k)
             print(result)
             XCTAssertEqual(result, expected, "Failed for vowels at the end")
         }
     }
-    
+
     // 附加测试用例 7: 字符串只有一个元音字符
     // Additional Test Case 7: String with a single vowel character
     func testSingleVowelCharacter7() {
@@ -271,13 +271,13 @@ final class P1456_Solution1_Tests: XCTestCase {
             XCTAssertEqual(result, expected, "Failed on a normal case")
         }
     }
-    
+
     // 附加测试用例 16: 极限情况 - 长字符串，全是元音
     // Additional Test Case 16: Extreme case - long string, all vowels
     func testPerformanceLongStringAllVowels16() {
         measure {
             let s = P1456_Solution1()
-            let inputS = String(repeating: "a", count: 100000)
+            let inputS = String(repeating: "a", count: 100_000)
             let k = 100
             let expected = 100
             let result = s.maxVowels(inputS, k)
@@ -305,7 +305,7 @@ final class P1456_Solution1_Tests: XCTestCase {
     func testPerformanceLongStringNoVowels18() {
         measure {
             let s = P1456_Solution1()
-            let inputS = String(repeating: "z", count: 100000)
+            let inputS = String(repeating: "z", count: 100_000)
             let k = 1000
             let expected = 0
             let result = s.maxVowels(inputS, k)

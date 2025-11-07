@@ -44,11 +44,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:.swiftpm/LeetCodeSolutions-Package.xctestplan"
+            reference = "container:TestPlan.xctestplan"
             default = "YES">
-         </TestPlanReference>
-         <TestPlanReference
-            reference = "container:TestPlan.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
