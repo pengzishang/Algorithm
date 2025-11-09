@@ -1,8 +1,9 @@
-import XCTest
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P2090_Solution1_Tests: XCTestCase {
     // MARK: - Test Cases from Examples
+
     // MARK: - 从示例中提取的测试用例
 
     // Test case from example 1
@@ -21,9 +22,9 @@ final class P2090_Solution1_Tests: XCTestCase {
     // 示例 2 的测试用例
     func testExample2() {
         let s = P2090_Solution1()
-        let nums = [100000]
+        let nums = [100_000]
         let k = 0
-        let expected = [100000]
+        let expected = [100_000]
         let result = s.getAverages(nums, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed on example 2")
@@ -34,7 +35,7 @@ final class P2090_Solution1_Tests: XCTestCase {
     func testExample3() {
         let s = P2090_Solution1()
         let nums = [8]
-        let k = 100000
+        let k = 100_000
         let expected = [-1]
         let result = s.getAverages(nums, k)
         print(result)
@@ -42,6 +43,7 @@ final class P2090_Solution1_Tests: XCTestCase {
     }
 
     // MARK: - Additional Test Cases
+
     // MARK: - 额外的测试用例
 
     // Test case where k is 0 with a larger array
@@ -79,7 +81,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed when 2*k+1 == n")
     }
-    
+
     // Test case with all elements being the same
     // 所有元素都相同的测试用例
     func testAllElementsAreSame_4() {
@@ -91,7 +93,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed with all same numbers")
     }
-    
+
     // Test case with an array containing zeros
     // 数组包含零的测试用例
     func testArrayContainsZeros_5() {
@@ -103,7 +105,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed with array containing zeros")
     }
-    
+
     // Simple test case with k = 1
     // k=1 的简单测试用例
     func testSimpleCaseWithKOne_6() {
@@ -115,7 +117,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed on a simple case with k=1")
     }
-    
+
     // Test case where k is half of the array length minus one
     // k 等于数组长度一半减一的测试用例
     func testKIsHalfOfArrayLengthMinusOne_7() {
@@ -127,19 +129,19 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed when k is (n/2)-1")
     }
-    
+
     // Test case with large numbers
     // 包含大数值的测试用例
     func testLargeNumbers_8() {
         let s = P2090_Solution1()
-        let nums = [100000, 100000, 100000]
+        let nums = [100_000, 100_000, 100_000]
         let k = 1
-        let expected = [-1, 100000, -1]
+        let expected = [-1, 100_000, -1]
         let result = s.getAverages(nums, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed with large numbers")
     }
-    
+
     // Test case where k is almost as large as n
     // k 几乎与 n 一样大的测试用例
     func testKAlmostAsLargeAsN_9() {
@@ -151,7 +153,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed when k is almost as large as n")
     }
-    
+
     // A slightly more complex sliding window case
     // 一个稍复杂的滑动窗口测试用例
     func testComplexSlidingWindow_10() {
@@ -163,7 +165,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed on a more complex sliding window case")
     }
-    
+
     // Test case where k equals n - 1
     // k 等于 n-1 的测试用例
     func testKEqualsNMinusOne_11() {
@@ -187,7 +189,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed when k > n")
     }
-    
+
     // Test case with alternating small and large numbers
     // 包含交替大小数值的测试用例
     func testAlternatingNumbers_13() {
@@ -223,7 +225,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed with two elements and k=0")
     }
-    
+
     // Test case with two elements and k = 1
     // 两个元素且 k=1 的测试用例
     func testTwoElementsKIsOne_16() {
@@ -248,7 +250,7 @@ final class P2090_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed on integer truncation logic")
     }
-    
+
     // Another normal case with different values
     // 另一个具有不同值的普通测试用例
     func testAnotherNormalCase_18() {
@@ -267,48 +269,49 @@ final class P2090_Solution1_Tests: XCTestCase {
     }
 
     // MARK: - Performance Test Cases
+
     // MARK: - 性能测试用例
-    
+
     // Performance test with large n and small k
     // 大 n 小 k 的性能测试用例
     func testPerformanceWithLargeNAndSmallK_19() {
         let s = P2090_Solution1()
-        let n = 100000
+        let n = 100_000
         let k = 100
         let nums = Array(repeating: 10, count: n)
         var expected = Array(repeating: -1, count: n)
         if n >= 2 * k + 1 {
-            for i in k..<(n - k) {
+            for i in k ..< (n - k) {
                 expected[i] = 10
             }
         }
-        
+
         // Using measure block to check performance
         // 使用 measure 块来检查性能
-        self.measure {
+        measure {
             let result = s.getAverages(nums, k)
             XCTAssertEqual(result, expected, "Failed on performance test with large n and small k")
         }
     }
-    
+
     // Performance test with large n and large k
     // 大 n 大 k 的性能测试用例
     func testPerformanceWithLargeNAndLargeK_20() {
         let s = P2090_Solution1()
-        let n = 100000
+        let n = 100_000
         let k = 40000
-        let nums = Array(0..<n)
+        let nums = Array(0 ..< n)
         var expected = Array(repeating: -1, count: n)
-        
+
         // Pre-calculate expected values for assertion
         // 预计算期望值用于断言
         if n >= 2 * k + 1 {
             var currentSum = 0
-            for i in 0..<(2 * k + 1) {
+            for i in 0 ..< (2 * k + 1) {
                 currentSum += nums[i]
             }
-            
-            for i in k..<(n - k) {
+
+            for i in k ..< (n - k) {
                 expected[i] = currentSum / (2 * k + 1)
                 if i + k + 1 < n {
                     currentSum -= nums[i - k]
@@ -319,7 +322,7 @@ final class P2090_Solution1_Tests: XCTestCase {
 
         // Using measure block to check performance
         // 使用 measure 块来检查性能
-        self.measure {
+        measure {
             let result = s.getAverages(nums, k)
             XCTAssertEqual(result, expected, "Failed on performance test with large n and large k")
         }
