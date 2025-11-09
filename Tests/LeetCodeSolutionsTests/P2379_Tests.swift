@@ -1,5 +1,5 @@
-import XCTest
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P2379_Solution1_Tests: XCTestCase {
     // Test case from example 1
@@ -25,7 +25,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for blocks = \(blocks), k = \(k)")
     }
-    
+
     // Test case with k=1 and a 'B' present
     // k=1 且存在 'B' 的测试用例
     func testKIsOneWithBlackBlock() {
@@ -37,7 +37,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for blocks = \(blocks), k = \(k)")
     }
-    
+
     // Test case with k=1 and no 'B's present
     // k=1 且不存在 'B' 的测试用例
     func testKIsOneWithOnlyWhiteBlocks() {
@@ -104,12 +104,12 @@ final class P2379_Solution1_Tests: XCTestCase {
         let s = P2379_Solution1()
         let blocks = "WWBBBW"
         let k = 3
-        let expected = 1
+        let expected = 0
         let result = s.minimumRecolors(blocks, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for blocks = \(blocks), k = \(k)")
     }
-    
+
     // Test case where the optimal window is at the end
     // 最优窗口在结尾的测试用例
     func testOptimalWindowAtEnd() {
@@ -121,7 +121,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for blocks = \(blocks), k = \(k)")
     }
-    
+
     // Test case with multiple optimal windows
     // 存在多个最优窗口的测试用例
     func testMultipleOptimalWindows() {
@@ -145,7 +145,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for blocks = \(blocks), k = \(k)")
     }
-    
+
     // Test case with alternating characters and odd k
     // 交替字符且 k 为奇数的测试用例
     func testAlternatingOddK() {
@@ -181,7 +181,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for blocks = \(blocks), k = \(k)")
     }
-    
+
     // A more complex case
     // 一个更复杂的测试用例
     func testComplexCase1() {
@@ -205,7 +205,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for blocks = \(blocks), k = \(k)")
     }
-    
+
     // Maximum length string, all 'W'
     // 最大长度字符串，全'W'
     func testMaxLengthAllWhite() {
@@ -217,7 +217,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for a long string of 'W's")
     }
-    
+
     // Maximum length string, all 'B'
     // 最大长度字符串，全'B'
     func testMaxLengthAllBlack() {
@@ -229,7 +229,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for a long string of 'B's")
     }
-    
+
     // Maximum length string, k=n
     // 最大长度字符串, k=n
     func testMaxLengthKEqualsN() {
@@ -253,7 +253,7 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for max length string, optimal at start")
     }
-    
+
     // Maximum length string, optimal window at the end
     // 最大长度字符串，最优窗口在结尾
     func testMaxLengthOptimalAtEnd() {
@@ -265,12 +265,13 @@ final class P2379_Solution1_Tests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for max length string, optimal at end")
     }
-    
+
     // Maximum length string, optimal window in the middle
     // 最大长度字符串，最优窗口在中间
     func testMaxLengthOptimalInMiddle() {
         let s = P2379_Solution1()
-        let blocks = String(repeating: "W", count: 45) + String(repeating: "B", count: 10) + String(repeating: "W", count: 45)
+        let blocks = String(repeating: "W", count: 45) + String(repeating: "B", count: 10) + String(repeating: "W",
+                                                                                                    count: 45)
         let k = 10
         let expected = 0
         let result = s.minimumRecolors(blocks, k)
