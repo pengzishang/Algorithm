@@ -1,15 +1,15 @@
-import XCTest
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P1052_GrumpyBookstoreOwnerTests: XCTestCase {
     // MARK: - Test Cases from Examples (来自题目的测试用例)
-    
+
     // Test case 1 from the problem description.
     // 题目描述中的示例 1。
     func testExample1() {
         let s = P1052_Solution1()
-        let customers = [1,0,1,2,1,1,7,5]
-        let grumpy = [0,1,0,1,0,1,0,1]
+        let customers = [1, 0, 1, 2, 1, 1, 7, 5]
+        let grumpy = [0, 1, 0, 1, 0, 1, 0, 1]
         let minutes = 3
         let expected = 16
         let result = s.maxSatisfied(customers, grumpy, minutes)
@@ -118,7 +118,8 @@ final class P1052_GrumpyBookstoreOwnerTests: XCTestCase {
         let customers = [1, 0, 1, 2, 0, 1]
         let grumpy = [0, 1, 0, 1, 1, 0]
         let minutes = 3
-        let expected = 5 // Base: 1+1+1=3. Window [0,1,2] gain: 0. Window [1,2,3] gain: 2. Window [2,3,4] gain: 2+0=2. Total: 3+2=5.
+        let expected =
+            5 // Base: 1+1+1=3. Window [0,1,2] gain: 0. Window [1,2,3] gain: 2. Window [2,3,4] gain: 2+0=2. Total: 3+2=5.
         let result = s.maxSatisfied(customers, grumpy, minutes)
         print(result)
         XCTAssertEqual(result, expected, "Failed with zero customers in the window.")
@@ -214,7 +215,7 @@ final class P1052_GrumpyBookstoreOwnerTests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed when grumpy minutes are at the start.")
     }
-    
+
     // Test when grumpy minutes are only at the end.
     // 测试生气时间只在结束时段。
     func testGrumpyAtEnd() {
@@ -266,7 +267,7 @@ final class P1052_GrumpyBookstoreOwnerTests: XCTestCase {
         print(result)
         XCTAssertEqual(result, expected, "Failed for complex mixed values.")
     }
-    
+
     // Test where a non-grumpy minute is part of the best window.
     // 测试一个不生气的分钟是最佳窗口的一部分。
     func testWindowIncludesNonGrumpy() {
@@ -281,7 +282,7 @@ final class P1052_GrumpyBookstoreOwnerTests: XCTestCase {
     }
 
     // MARK: - Performance Test (性能测试)
-    
+
     // Performance test with large inputs.
     // 使用大数据量进行性能测试。
     func testPerformanceLargeN() {
@@ -291,7 +292,7 @@ final class P1052_GrumpyBookstoreOwnerTests: XCTestCase {
         var customers = Array(repeating: 1, count: n)
         var grumpy = Array(repeating: 0, count: n)
         var baseSatisfied = 0
-        for i in 0..<n {
+        for i in 0 ..< n {
             // Make every other minute grumpy, and have varying customer counts
             // 每隔一分钟就生气，并设置不同的顾客数量
             customers[i] = (i % 10) + 1
@@ -302,23 +303,23 @@ final class P1052_GrumpyBookstoreOwnerTests: XCTestCase {
                 baseSatisfied += customers[i]
             }
         }
-        
+
         // Manual calculation for expected result
         // 手动计算预期结果
         var maxGain = 0
         var currentGain = 0
         // Calculate initial window gain
         // 计算初始窗口增益
-        for i in 0..<minutes {
+        for i in 0 ..< minutes {
             if grumpy[i] == 1 {
                 currentGain += customers[i]
             }
         }
         maxGain = currentGain
-        
+
         // Slide the window
         // 滑动窗口
-        for i in minutes..<n {
+        for i in minutes ..< n {
             if grumpy[i] == 1 {
                 currentGain += customers[i]
             }
