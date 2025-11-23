@@ -1,8 +1,7 @@
-import XCTest
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P3694_Solution1_Tests: XCTestCase {
-
     // Test case from Example 1
     // 示例 1 中的测试用例
     func testExample1() {
@@ -10,7 +9,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "LUL"
         let k = 1
         let expected = 2
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -22,7 +21,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "UDLR"
         let k = 4
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -34,7 +33,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "UU"
         let k = 1
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -46,7 +45,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "UDUD"
         let k = 1
         let expected = 2
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -58,7 +57,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "LLLLL"
         let k = 2
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -70,7 +69,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "UDUDUD"
         let k = 2
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -82,7 +81,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "LRLRLR"
         let k = 2
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -94,7 +93,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "RLRLRLRLRL"
         let k = 1
         let expected = 2
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -106,7 +105,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "RURURU"
         let k = 3
         let expected = 2
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -118,7 +117,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "LDR"
         let k = 2
         let expected = 2
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -130,7 +129,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "ULDR"
         let k = 1
         let expected = 4
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -142,7 +141,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "ULDR"
         let k = 3
         let expected = 2
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -154,7 +153,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "RDRD"
         let k = 2
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -166,7 +165,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "LR"
         let k = 1
         let expected = 2
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -178,7 +177,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "UD"
         let k = 1
         let expected = 2
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -190,7 +189,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "RL"
         let k = 2
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -202,7 +201,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "DU"
         let k = 2
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -214,7 +213,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "RULDRD"
         let k = 3
         let expected = 4
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -226,7 +225,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "LLRR"
         let k = 2
         let expected = 3
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -238,11 +237,11 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "UUDD"
         let k = 2
         let expected = 3
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
-    
+
     // Test case with repeated characters, but removals still result in the same remaining string
     // 测试包含重复字符，但移除后总得到相同剩余字符串的情况
     func testRepeatedCharsSameResult() {
@@ -250,7 +249,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "RRR"
         let k = 2
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
@@ -262,11 +261,11 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = "U"
         let k = 1
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
-    
+
     // Performance test with a long string of repeating canceling pairs.
     // 使用长的重复抵消对字符串进行性能测试。
     func testPerformanceWithCancelingPairs() {
@@ -274,7 +273,7 @@ final class P3694_Solution1_Tests: XCTestCase {
         let inputS = String(repeating: "UD", count: 50000)
         let k = 2
         let expected = 1
-        let result = s.numberOfPoints(s: inputS, k: k)
+        let result = s.distinctPoints(inputS, k)
         print(result)
         XCTAssertEqual(result, expected, "Failed for s = \(inputS), k = \(k)")
     }
