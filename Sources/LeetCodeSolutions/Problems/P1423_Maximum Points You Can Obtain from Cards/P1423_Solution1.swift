@@ -8,7 +8,6 @@ final class P1423_Solution1 {
             currSum -= cardPoints[i - midLength]
             minSum = min(minSum, currSum)
         }
-        let rest = cardPoints.reduce(0, +) - minSum
-        return rest
+        return cardPoints.reduce(0, +) - minSum
     }
 }

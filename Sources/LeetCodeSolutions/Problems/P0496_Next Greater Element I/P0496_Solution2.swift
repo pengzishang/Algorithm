@@ -1,6 +1,6 @@
 public final class P0496_Solution2 {
     public init() {}
-//    nums2 = [1,3,4,2]
+    ///    nums2 = [1,3,4,2]
     public func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         var stack = [Int]()
         var nextGreater = [Int: Int]()

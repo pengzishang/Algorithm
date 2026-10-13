@@ -261,7 +261,7 @@ final class P1671_Solution1_Tests: XCTestCase {
     func testPerformanceMaximumInput() {
         let s = P1671_Solution1()
         let nums = Array(1 ... 500) + [1] + Array((1 ... 499).reversed())
-        self.measure {
+        measure {
             _ = s.minimumMountainRemovals(nums)
         }
     }

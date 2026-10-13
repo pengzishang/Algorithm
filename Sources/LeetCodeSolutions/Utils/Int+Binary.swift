@@ -11,7 +11,9 @@ extension Int {
                         prefix: Bool = false) -> String
     {
         precondition(bitWidth >= 0, "bitWidth must be non-negative")
-        if bitWidth == 0 { return prefix ? "0b" : "" }
+        if bitWidth == 0 {
+            return prefix ? "0b" : ""
+        }
 
         var s = String(UInt(bitPattern: self), radix: 2)
         // 补齐/截断为指定位宽

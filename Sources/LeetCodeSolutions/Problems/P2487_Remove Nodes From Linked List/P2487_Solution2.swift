@@ -1,6 +1,6 @@
 public final class P2487_Solution2 {
     public init() {}
-    // 单调栈
+    /// 单调栈
     public func removeNodes(_ head: ListNode?) -> ListNode? {
         // 要观察, 这是一个递减的关系
         // 所以是一开始会找到一个最大的, 然后次大的, 然后...

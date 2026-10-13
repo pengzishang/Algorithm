@@ -1,5 +1,5 @@
 final class P0015_Solution1 {
-    // 元素过多的时候肯定不行
+    /// 元素过多的时候肯定不行
     func threeSum(_ nums: [Int]) -> [[Int]] {
         // force
         var result: [[Int]] = []

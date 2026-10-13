@@ -1,5 +1,5 @@
 final class P0137_Solution1 {
-    // Hash
+    /// Hash
     func singleNumber(_ nums: [Int]) -> Int {
         let firstValue = nums.reduce(into: [Int: Int]()) { partialResult, item in
             if let value = partialResult[item] {

@@ -13,7 +13,11 @@ public func pp(_ items: Any?..., label: String? = nil, style: PPStyle = .plain) 
     let body = items.map { format($0) }.joined(separator: "\n")
     switch style {
     case .plain:
-        if let label { print("[PP] \(label) @\(ts):\n\(body)") } else { print("[PP] @\(ts):\n\(body)") }
+        if let label {
+            print("[PP] \(label) @\(ts):\n\(body)")
+        } else {
+            print("[PP] @\(ts):\n\(body)")
+        }
     case .boxed:
         let title = label ?? "PrettyPrint"
         let lines = body.split(separator: "\n", omittingEmptySubsequences: false)
@@ -48,7 +52,9 @@ public struct Pretty<T>: CustomStringConvertible {
         let body = format(value)
         switch style {
         case .plain:
-            if let label { return "[PP] \(label) @\(ts):\n\(body)" }
+            if let label {
+                return "[PP] \(label) @\(ts):\n\(body)"
+            }
             return body
         case .boxed:
             let title = label ?? "PrettyPrint"
@@ -79,24 +85,36 @@ private func format(_ value: Any?, depth: Int = 0, maxDepth: Int = 4, maxItems: 
     guard let value else { return "nil" }
 
     // Direct known types
-    if let s = value as? String { return "\"\(s)\" (len=\(s.count))" }
-    if let c = value as? Character { return "'\(c)'" }
-    if let ln = value as? ListNode { return formatListNode(ln) }
-    if let tn = value as? TreeNode { return formatTreeNode(tn, maxDepth: 6) }
+    if let s = value as? String {
+        return "\"\(s)\" (len=\(s.count))"
+    }
+    if let c = value as? Character {
+        return "'\(c)'"
+    }
+    if let ln = value as? ListNode {
+        return formatListNode(ln)
+    }
+    if let tn = value as? TreeNode {
+        return formatTreeNode(tn, maxDepth: 6)
+    }
 
     // Mirror-based formatting
     let mirror = Mirror(reflecting: value)
 
     switch mirror.displayStyle {
     case .optional:
-        if mirror.children.isEmpty { return "nil" }
+        if mirror.children.isEmpty {
+            return "nil"
+        }
         return format(mirror.children.first!.value, depth: depth + 1, maxDepth: maxDepth, maxItems: maxItems)
 
     case .collection:
         // Array / Set / any collection
         let elements = mirror.children.map(\.value)
         let count = elements.count
-        if count == 0 { return "[]" }
+        if count == 0 {
+            return "[]"
+        }
 
         if isMatrix(elements) {
             return formatMatrix(elements, depth: depth, maxDepth: maxDepth, maxItems: maxItems)
@@ -116,9 +134,17 @@ private func format(_ value: Any?, depth: Int = 0, maxDepth: Int = 4, maxItems: 
             guard m.displayStyle == .tuple else { return nil }
             var key: Any?; var val: Any?
             for (label, v) in m.children {
-                if label == ".0" { key = v } else if label == ".1" { val = v }
+                if label == ".0" {
+                    key = v
+                } else if label == ".1" {
+                    val = v
+                }
             }
-            if let k = key, let v = val { return (k, v) } else { return nil }
+            if let k = key, let v = val {
+                return (k, v)
+            } else {
+                return nil
+            }
         }
         let sorted = pairs.sorted { String(describing: $0.0) < String(describing: $1.0) }
         let limited = sorted.prefix(maxItems)
@@ -196,7 +222,9 @@ private func formatListNode(_ head: ListNode?) -> String {
         node = n.next
         steps += 1
     }
-    if node != nil { values.append("…") }
+    if node != nil {
+        values.append("…")
+    }
     return "LinkedList(count≈\(values.count))\n" + values.joined(separator: " → ") + " → nil"
 }
 
@@ -212,7 +240,9 @@ private func formatTreeNode(_ root: TreeNode?, maxDepth: Int) -> String {
             result.append("[ " + levelVals.joined(separator: ", ") + " ]")
             levelVals.removeAll()
             currentLevel = depth
-            if depth >= maxDepth { break }
+            if depth >= maxDepth {
+                break
+            }
         }
         if let n = node {
             levelVals.append(String(n.val))
@@ -224,18 +254,24 @@ private func formatTreeNode(_ root: TreeNode?, maxDepth: Int) -> String {
             levelVals.append("nil")
         }
     }
-    if !levelVals.isEmpty { result.append("[ " + levelVals.joined(separator: ", ") + " ]") }
+    if !levelVals.isEmpty {
+        result.append("[ " + levelVals.joined(separator: ", ") + " ]")
+    }
     return (["Tree(levels≤\(maxDepth))"] + result).joined(separator: "\n")
 }
 
 // MARK: - Make repo types pretty with standard print()
 
 extension ListNode: CustomStringConvertible {
-    public var description: String { formatListNode(self) }
+    public var description: String {
+        formatListNode(self)
+    }
 }
 
 extension TreeNode: CustomStringConvertible {
-    public var description: String { formatTreeNode(self, maxDepth: 6) }
+    public var description: String {
+        formatTreeNode(self, maxDepth: 6)
+    }
 }
 
 // MARK: - Override print to pretty-format common structures

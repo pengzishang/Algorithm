@@ -193,7 +193,7 @@ final class P0206_Solution1_Tests: XCTestCase {
     // 正常: 二十个节点, 值呈重复模式
     func testTwentyNodesPattern() {
         let s = P0206_Solution1()
-        let values = Array(repeating: [1, 2], count: 10).flatMap { $0 }
+        let values = Array(repeating: [1, 2], count: 10).flatMap(\.self)
         let head = values.toLinkedList()
         let result = s.reverseList(head)
         let resultArray = result?.printList() ?? []
@@ -250,7 +250,7 @@ final class P0206_Solution1_Tests: XCTestCase {
     func testPerformance5000Nodes() {
         let s = P0206_Solution1()
         let head = Array(1 ... 5000).toLinkedList()
-        self.measure {
+        measure {
             _ = s.reverseList(head)
         }
     }

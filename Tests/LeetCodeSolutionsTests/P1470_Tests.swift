@@ -2,8 +2,8 @@
 import XCTest
 
 final class P1470_Solution1_Tests: XCTestCase {
-    // Test case from example 1
-    // 示例 1 中的测试用例
+    /// Test case from example 1
+    /// 示例 1 中的测试用例
     func testShuffle_example1() {
         let s = P1470_Solution1()
         let nums = [2, 5, 1, 3, 4, 7]
@@ -14,8 +14,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         XCTAssertEqual(result, expected, "Failed on example 1 with input nums: \(nums), n: \(n)")
     }
 
-    // Test case from example 2
-    // 示例 2 中的测试用例
+    /// Test case from example 2
+    /// 示例 2 中的测试用例
     func testShuffle_example2() {
         let s = P1470_Solution1()
         let nums = [1, 2, 3, 4, 4, 3, 2, 1]
@@ -26,8 +26,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         XCTAssertEqual(result, expected, "Failed on example 2 with input nums: \(nums), n: \(n)")
     }
 
-    // Test case from example 3
-    // 示例 3 中的测试用例
+    /// Test case from example 3
+    /// 示例 3 中的测试用例
     func testShuffle_example3() {
         let s = P1470_Solution1()
         let nums = [1, 1, 2, 2]
@@ -38,8 +38,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         XCTAssertEqual(result, expected, "Failed on example 3 with input nums: \(nums), n: \(n)")
     }
 
-    // Boundary case: minimum n (n=1)
-    // 边界情况：最小的 n (n=1)
+    /// Boundary case: minimum n (n=1)
+    /// 边界情况：最小的 n (n=1)
     func testShuffle_minN_case4() {
         let s = P1470_Solution1()
         measure {
@@ -52,8 +52,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Case with all same numbers
-    // 所有数字都相同的用例
+    /// Case with all same numbers
+    /// 所有数字都相同的用例
     func testShuffle_allSameNumbers_case5() {
         let s = P1470_Solution1()
         measure {
@@ -66,8 +66,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Case with sequential numbers
-    // 数字连续的用例
+    /// Case with sequential numbers
+    /// 数字连续的用例
     func testShuffle_sequentialNumbers_case6() {
         let s = P1470_Solution1()
         measure {
@@ -80,8 +80,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Case with large distinct numbers
-    // 较大且不重复的数字的用例
+    /// Case with large distinct numbers
+    /// 较大且不重复的数字的用例
     func testShuffle_largeDistinctNumbers_case7() {
         let s = P1470_Solution1()
         measure {
@@ -94,8 +94,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Case with duplicates in x and y parts
-    // x 和 y部分都包含重复数字的用例
+    /// Case with duplicates in x and y parts
+    /// x 和 y部分都包含重复数字的用例
     func testShuffle_duplicates_case8() {
         let s = P1470_Solution1()
         measure {
@@ -108,8 +108,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Case with mixed order of numbers
-    // 数字顺序混合的用例
+    /// Case with mixed order of numbers
+    /// 数字顺序混合的用例
     func testShuffle_mixedOrder_case9() {
         let s = P1470_Solution1()
         measure {
@@ -122,8 +122,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Case with max values from constraints
-    // 使用约束条件中的最大值的用例
+    /// Case with max values from constraints
+    /// 使用约束条件中的最大值的用例
     func testShuffle_maxValues_case10() {
         let s = P1470_Solution1()
         measure {
@@ -136,8 +136,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Large size case, but not maximum
-    // 较大规模的用例，但不是最大规模
+    /// Large size case, but not maximum
+    /// 较大规模的用例，但不是最大规模
     func testShuffle_largeSize_case11() {
         let s = P1470_Solution1()
         measure {
@@ -159,8 +159,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Extreme case: maximum n for performance check
-    // 极限情况：最大的 n，用于性能测试
+    /// Extreme case: maximum n for performance check
+    /// 极限情况：最大的 n，用于性能测试
     func testShuffle_maxSize_performance_case12() {
         let s = P1470_Solution1()
         measure {
@@ -182,8 +182,8 @@ final class P1470_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Extreme case: maximum n with all values at max
-    // 极限情况：最大的 n 并且所有值都是最大值
+    /// Extreme case: maximum n with all values at max
+    /// 极限情况：最大的 n 并且所有值都是最大值
     func testShuffle_maxSizeWithMaxValues_performance_case13() {
         let s = P1470_Solution1()
         measure {

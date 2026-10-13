@@ -2,8 +2,8 @@
 import XCTest
 
 final class P1343_Solution1_Tests: XCTestCase {
-    // Test case 1: From example 1.
-    // 测试用例 1: 来自示例 1。
+    /// Test case 1: From example 1.
+    /// 测试用例 1: 来自示例 1。
     @MainActor func testExample1_1() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -28,8 +28,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 2: From example 2.
-    // 测试用例 2: 来自示例 2。
+    /// Test case 2: From example 2.
+    /// 测试用例 2: 来自示例 2。
     @MainActor func testExample2_2() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -54,8 +54,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 3: No subarrays match because the threshold is too high.
-    // 测试用例 3: 因为阈值太高，没有子数组满足条件。
+    /// Test case 3: No subarrays match because the threshold is too high.
+    /// 测试用例 3: 因为阈值太高，没有子数组满足条件。
     @MainActor func testNoSubarraysMatch_3() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -80,8 +80,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 4: All subarrays match because the threshold is zero.
-    // 测试用例 4: 因为阈值为零，所有子数组都满足条件。
+    /// Test case 4: All subarrays match because the threshold is zero.
+    /// 测试用例 4: 因为阈值为零，所有子数组都满足条件。
     @MainActor func testAllSubarraysMatch_4() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -106,8 +106,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 5: Boundary case where k is 1.
-    // 测试用例 5: 边界情况，k 为 1。
+    /// Test case 5: Boundary case where k is 1.
+    /// 测试用例 5: 边界情况，k 为 1。
     @MainActor func testBoundaryKIsOne_5() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -132,8 +132,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 6: Boundary case where k is equal to the array length.
-    // 测试用例 6: 边界情况，k 等于数组长度。
+    /// Test case 6: Boundary case where k is equal to the array length.
+    /// 测试用例 6: 边界情况，k 等于数组长度。
     @MainActor func testBoundaryKIsArrLength_6() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -158,8 +158,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 7: Boundary case where k is array length but doesn't match.
-    // 测试用例 7: 边界情况，k 等于数组长度但不满足条件。
+    /// Test case 7: Boundary case where k is array length but doesn't match.
+    /// 测试用例 7: 边界情况，k 等于数组长度但不满足条件。
     @MainActor func testBoundaryKIsArrLengthNoMatch_7() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -184,8 +184,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 8: The average is exactly equal to the threshold.
-    // 测试用例 8: 平均值恰好等于阈值。
+    /// Test case 8: The average is exactly equal to the threshold.
+    /// 测试用例 8: 平均值恰好等于阈值。
     @MainActor func testAverageIsExactlyThreshold_8() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -210,8 +210,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 9: Array with a single element, which matches.
-    // 测试用例 9: 单元素数组，且满足条件。
+    /// Test case 9: Array with a single element, which matches.
+    /// 测试用例 9: 单元素数组，且满足条件。
     @MainActor func testSingleElementArrayMatch_9() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -236,8 +236,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 10: Array with a single element, which does not match.
-    // 测试用例 10: 单元素数组，但不满足条件。
+    /// Test case 10: Array with a single element, which does not match.
+    /// 测试用例 10: 单元素数组，但不满足条件。
     @MainActor func testSingleElementArrayNoMatch_10() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -262,8 +262,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 11: All elements are the same, average is below threshold.
-    // 测试用例 11: 所有元素相同，平均值低于阈值。
+    /// Test case 11: All elements are the same, average is below threshold.
+    /// 测试用例 11: 所有元素相同，平均值低于阈值。
     @MainActor func testAllElementsSameBelowThreshold_11() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -288,8 +288,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 12: All elements are the same, average is equal to threshold.
-    // 测试用例 12: 所有元素相同，平均值等于阈值。
+    /// Test case 12: All elements are the same, average is equal to threshold.
+    /// 测试用例 12: 所有元素相同，平均值等于阈值。
     @MainActor func testAllElementsSameAtThreshold_12() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -314,8 +314,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 13: All elements are the same, average is above threshold.
-    // 测试用例 13: 所有元素相同，平均值高于阈值。
+    /// Test case 13: All elements are the same, average is above threshold.
+    /// 测试用例 13: 所有元素相同，平均值高于阈值。
     @MainActor func testAllElementsSameAboveThreshold_13() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -340,8 +340,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 14: Strictly increasing array.
-    // 测试用例 14: 严格递增数组。
+    /// Test case 14: Strictly increasing array.
+    /// 测试用例 14: 严格递增数组。
     @MainActor func testStrictlyIncreasingArray_14() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -366,8 +366,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 15: Strictly decreasing array.
-    // 测试用例 15: 严格递减数组。
+    /// Test case 15: Strictly decreasing array.
+    /// 测试用例 15: 严格递减数组。
     @MainActor func testStrictlyDecreasingArray_15() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -392,8 +392,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 16: Array with large values near the constraint limit.
-    // 测试用例 16: 包含接近约束上限的大数值的数组。
+    /// Test case 16: Array with large values near the constraint limit.
+    /// 测试用例 16: 包含接近约束上限的大数值的数组。
     @MainActor func testLargeValues_16() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -418,8 +418,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 17: Array with a mix of small and very large values.
-    // 测试用例 17: 混合了小数值和极大数值的数组。
+    /// Test case 17: Array with a mix of small and very large values.
+    /// 测试用例 17: 混合了小数值和极大数值的数组。
     @MainActor func testMixedValues_17() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -444,8 +444,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 18: A case where the average is a non-integer.
-    // 测试用例 18: 平均值为非整数的情况。
+    /// Test case 18: A case where the average is a non-integer.
+    /// 测试用例 18: 平均值为非整数的情况。
     @MainActor func testFloatingPointAverage_18() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -470,8 +470,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 19: Long array with a relatively large k.
-    // 测试用例 19: 较长数组和相对较大的 k 值。
+    /// Test case 19: Long array with a relatively large k.
+    /// 测试用例 19: 较长数组和相对较大的 k 值。
     @MainActor func testLongArrayLargeK_19() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -496,8 +496,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 20: Another case with non-integer average, not matching.
-    // 测试用例 20: 另一个平均值为非整数且不满足条件的情况。
+    /// Test case 20: Another case with non-integer average, not matching.
+    /// 测试用例 20: 另一个平均值为非整数且不满足条件的情况。
     @MainActor func testFloatingPointAverageNoMatch_20() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -522,8 +522,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 21: Performance test with a large array and small k.
-    // 测试用例 21: 针对大数组和小 k 值的性能测试。
+    /// Test case 21: Performance test with a large array and small k.
+    /// 测试用例 21: 针对大数组和小 k 值的性能测试。
     @MainActor func testPerformanceLargeArraySmallK_21() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -548,8 +548,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 22: Performance test with a large array and large k.
-    // 测试用例 22: 针对大数组和大 k 值的性能测试。
+    /// Test case 22: Performance test with a large array and large k.
+    /// 测试用例 22: 针对大数组和大 k 值的性能测试。
     @MainActor func testPerformanceLargeArrayLargeK_22() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()
@@ -574,8 +574,8 @@ final class P1343_Solution1_Tests: XCTestCase {
         }
     }
 
-    // Test case 23: Performance test where all elements are the maximum value.
-    // 测试用例 23: 所有元素均为最大值的性能测试。
+    /// Test case 23: Performance test where all elements are the maximum value.
+    /// 测试用例 23: 所有元素均为最大值的性能测试。
     @MainActor func testPerformanceMaxValues_23() {
         let expectation = expectation(description: "Calculation should complete within 5 seconds.")
         let s = P1343_Solution1()

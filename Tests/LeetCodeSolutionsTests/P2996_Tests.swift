@@ -1,6 +1,5 @@
-import XCTest
-
 @testable import LeetCodeSolutions
+import XCTest
 
 final class P2996_Tests: XCTestCase {
     func test1() {

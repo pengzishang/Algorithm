@@ -1,6 +1,6 @@
 final class P0015_Solution2 {
-    // 左右指针法
-    // 拿出第一个数, 剩下的和用左右两个指针向中间靠近, 记得过滤掉过多重复的值
+    /// 左右指针法
+    /// 拿出第一个数, 剩下的和用左右两个指针向中间靠近, 记得过滤掉过多重复的值
     func threeSum(_ nums: [Int]) -> [[Int]] {
         var newList = nums.sorted()
         var result = [[Int]]()

@@ -1,6 +1,6 @@
 public final class P0014_Solution2 {
     public init() {}
-    // 二分法不好, 因为是前缀
+    /// 二分法不好, 因为是前缀
     public func longestCommonPrefix(_ strs: [String]) -> String {
         var commonPart = strs.first!
         for index in 1 ..< strs.count {

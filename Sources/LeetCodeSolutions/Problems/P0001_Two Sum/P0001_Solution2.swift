@@ -1,5 +1,5 @@
 final class P0001_Solution2 {
-    // 用hash比较
+    /// 用hash比较
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         let numSet = Set(nums)
         var firstIndex = -1

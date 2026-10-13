@@ -1,7 +1,7 @@
 import Foundation
 
 final class P0043_Solution1 {
-    // 采用低位累加, 一位一位的乘, 然后累加, 核心是绝对不能超出Int的处理范围
+    /// 采用低位累加, 一位一位的乘, 然后累加, 核心是绝对不能超出Int的处理范围
     func multiply(_ num1: String, _ num2: String) -> String {
         if num1 == "0" || num2 == "0" {
             return "0"
@@ -45,7 +45,11 @@ final class P0043_Solution1 {
             } else {
                 var digitSum = 0
                 for row in intermediateResults {
-                    let value = if row.count > position { row[position] } else { 0 }
+                    let value = if row.count > position {
+                        row[position]
+                    } else {
+                        0
+                    }
                     digitSum += value
                 }
                 digitSum += carry

@@ -1,5 +1,5 @@
 final class P0066_Solution1 {
-    // 传统法
+    /// 传统法
     func plusOne(_ digits: [Int]) -> [Int] {
         var copyDigits = digits
         var pointer = copyDigits.count - 1

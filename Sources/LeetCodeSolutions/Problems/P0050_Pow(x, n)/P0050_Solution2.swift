@@ -1,6 +1,10 @@
 final class P0050_Solution2 {
     func myPow(_ x: Double, _ n: Int) -> Double {
-        let origin = if n < 0 { 1 / x } else { x }
+        let origin = if n < 0 {
+            1 / x
+        } else {
+            x
+        }
         let times = abs(n)
         return muti(origin, times)
     }

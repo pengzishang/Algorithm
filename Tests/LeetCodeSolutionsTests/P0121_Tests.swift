@@ -126,17 +126,17 @@ final class P0121_Solution1_Tests: XCTestCase {
     // 边界: 0 之后出现允许的最大价格
     func testZeroThenMaximum() {
         let s = P0121_Solution1()
-        let prices = [0, 10_000]
+        let prices = [0, 10000]
         let result = s.maxProfit(prices)
         print("Test Zero Then Maximum Result: \(result)")
-        XCTAssertEqual(result, 10_000, "Failed for prices = [0,10000]: expected the full spread 10000")
+        XCTAssertEqual(result, 10000, "Failed for prices = [0,10000]: expected the full spread 10000")
     }
 
     // Boundary: maximum price first, then zero
     // 边界: 先最大值后 0
     func testMaximumThenZero() {
         let s = P0121_Solution1()
-        let prices = [10_000, 0]
+        let prices = [10000, 0]
         let result = s.maxProfit(prices)
         print("Test Maximum Then Zero Result: \(result)")
         XCTAssertEqual(result, 0, "Failed for prices = [10000,0]: expected 0")
@@ -146,10 +146,10 @@ final class P0121_Solution1_Tests: XCTestCase {
     // 边界: 多个 0 之后出现最大价格
     func testZerosAndMaxMixed() {
         let s = P0121_Solution1()
-        let prices = [0, 0, 10_000, 10_000]
+        let prices = [0, 0, 10000, 10000]
         let result = s.maxProfit(prices)
         print("Test Zeros And Max Result: \(result)")
-        XCTAssertEqual(result, 10_000, "Failed for prices = [0,0,10000,10000]: expected 10000")
+        XCTAssertEqual(result, 10000, "Failed for prices = [0,0,10000,10000]: expected 10000")
     }
 
     // Normal: drop first, then a rally
@@ -246,18 +246,18 @@ final class P0121_Solution1_Tests: XCTestCase {
     // 极限: 100000 个价格, 开头一个 0 之后全是最大价格
     func testLargeArrayWithSingleDip() {
         let s = P0121_Solution1()
-        let prices = [0] + Array(repeating: 10_000, count: 99_999)
+        let prices = [0] + Array(repeating: 10000, count: 99999)
         let result = s.maxProfit(prices)
         print("Test Large Array With Single Dip Result: \(result)")
-        XCTAssertEqual(result, 10_000, "Failed for 100000 prices starting at 0: expected 10000")
+        XCTAssertEqual(result, 10000, "Failed for 100000 prices starting at 0: expected 10000")
     }
 
     // Extreme: performance guard on the maximum input size
     // 极限: 最大输入规模下的性能测试, 用于验证是否超时
     func testPerformanceLargeInput() {
         let s = P0121_Solution1()
-        let prices = (0 ..< 100_000).map { $0 % 10_000 }
-        self.measure {
+        let prices = (0 ..< 100_000).map { $0 % 10000 }
+        measure {
             _ = s.maxProfit(prices)
         }
     }

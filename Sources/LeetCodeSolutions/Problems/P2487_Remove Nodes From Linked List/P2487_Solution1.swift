@@ -1,6 +1,6 @@
 public final class P2487_Solution1 {
     public init() {}
-    // O(n2) 可能超过时间限制
+    /// O(n2) 可能超过时间限制
     public func removeNodes(_ head: ListNode?) -> ListNode? {
         let dummyNode = ListNode(Int.max, head)
         var sPointer = dummyNode
