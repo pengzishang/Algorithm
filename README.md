@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/badge/platform-macOS%2013%2B-lightgrey.svg)](https://www.apple.com/macos/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> 一个基于 Swift Package Manager 的 LeetCode 算法题解集合，包含 **40** 道题目的多种解法实现。
+> 一个基于 Swift Package Manager 的 LeetCode 算法题解集合，包含 **59** 道题目的多种解法实现。
 >
 > 📚 **[查看 Wiki 获取详细文档和学习资源](../../wiki)** | **[View Wiki for detailed docs and resources](../../wiki)**
 
@@ -18,7 +18,6 @@
 - 🚀 **快速上手**：提供脚本自动生成新题目模板
 - 📝 **详细题解**：每题包含问题描述和复杂度分析
 - 🎨 **代码格式化**：统一的代码风格和命名规范
-- ⚡ **Sandbox 测试**：独立的可执行环境用于快速验证想法
 
 ---
 
@@ -36,14 +35,14 @@
 English
 -------
 
-LeetCodeSolutions is a collection of algorithmic problem solutions implemented in Swift and organized as a Swift Package (SPM). The repository is intended for developers who desire a well-structured, testable, and reproducible set of problem solutions, along with utility types for linked lists and binary trees and a lightweight Sandbox executable for experimentation.
+LeetCodeSolutions is a collection of algorithmic problem solutions implemented in Swift and organized as a Swift Package (SPM). The repository is intended for developers who desire a well-structured, testable, and reproducible set of problem solutions, along with utility types for linked lists and binary trees.
 
 This README provides: quick start commands, project layout, naming conventions, guidance for adding problems, a summary of utility modules, and notes on testing and CI.
 
 中文（简体）
 ------------
 
-LeetCodeSolutions 是一个使用 Swift 实现的算法题解集合，采用 Swift Package 管理（SPM）。该仓库面向追求结构清晰、可测试、可复现题解的开发者，包含链表与树等数据结构工具，以及用于快速试验的 Sandbox 可执行程序。
+LeetCodeSolutions 是一个使用 Swift 实现的算法题解集合，采用 Swift Package 管理（SPM）。该仓库面向追求结构清晰、可测试、可复现题解的开发者，包含链表与树等数据结构工具。
 
 本 README 包含：快速上手命令、项目结构、命名规范、新题添加指南、工具模块说明以及测试与 CI 相关注意事项。
 
@@ -70,19 +69,13 @@ cd Algorithm
 swift build
 ```
 
-3️⃣ **运行 Sandbox Run Sandbox**（查看示例输出 / See sample outputs）
-
-```bash
-swift run Sandbox
-```
-
-4️⃣ **运行测试 Run Tests**
+3️⃣ **运行测试 Run Tests**
 
 ```bash
 swift test
 ```
 
-5️⃣ **在 Xcode 中打开 Open in Xcode**（可选 / Optional）
+4️⃣ **在 Xcode 中打开 Open in Xcode**（可选 / Optional）
 
 ```bash
 open Package.swift
@@ -92,9 +85,9 @@ open Package.swift
 
 ## 已实现题目 📚 Solved Problems
 
-目前已实现 **40** 道 LeetCode 题目，涵盖数组、字符串、链表、数学等多个类别。
+目前已实现 **59** 道 LeetCode 题目，涵盖数组、字符串、链表、数学等多个类别。
 
-Currently implemented **40** LeetCode problems, covering arrays, strings, linked lists, math, and more.
+Currently implemented **59** LeetCode problems, covering arrays, strings, linked lists, math, and more.
 
 | 题号 | 题目 | 难度 | 标签 |
 |------|------|------|------|
@@ -155,9 +148,8 @@ Algorithm/
 ├── Package.swift                      # SPM 配置文件
 ├── README.md                          # 项目说明文档
 ├── Scripts/                           # 辅助脚本
-│   ├── new_problem.sh                # 创建新题目模板
-│   ├── format.sh                     # 代码格式化
-│   └── New LeetCode Problem.command  # macOS 快捷脚本
+│   ├── fetch_problem.py              # 抓取题目、生成骨架与 README（推荐）
+│   └── format.sh                     # 代码格式化
 ├── Sources/
 │   ├── LeetCodeSolutions/            # 主库模块
 │   │   ├── Problems/                 # 题解目录
@@ -170,8 +162,6 @@ Algorithm/
 │   │       ├── ListNode.swift       # 链表节点
 │   │       ├── TreeNode.swift       # 树节点
 │   │       └── PrettyPrint.swift    # 输出格式化
-│   └── Sandbox/                      # 可执行测试环境
-│       └── main.swift
 └── Tests/
     └── LeetCodeSolutionsTests/       # 单元测试
         ├── P0001_Tests.swift
@@ -192,8 +182,6 @@ Algorithm/
   - `TreeNode`: 二叉树节点定义
   - `PrettyPrint`: 美化输出工具
 
-- **Sandbox/**: 独立的可执行程序，用于快速测试和验证
-
 - **Tests/**: 单元测试，每个测试文件对应一道题目
 
 **English:**
@@ -206,8 +194,6 @@ Algorithm/
   - `ListNode`: Linked list node definition and utility methods
   - `TreeNode`: Binary tree node definition
   - `PrettyPrint`: Output formatting utilities
-
-- **Sandbox/**: Standalone executable for quick testing and validation
 
 - **Tests/**: Unit tests, one test file per problem
 
@@ -244,13 +230,13 @@ Algorithm/
 **中文 Chinese:**
 
 - 使用 `public final class` 包装解法
-- 仅在必要时暴露 `public` 方法（供测试或 Sandbox 使用）
+- 仅在必要时暴露 `public` 方法（供测试使用）
 - 遵循 Swift 标准命名约定：驼峰命名法
 
 **English:**
 
 - Use `public final class` to wrap solutions
-- Expose `public` methods only when necessary (for testing or Sandbox)
+- Expose `public` methods only when necessary (for testing)
 - Follow Swift naming conventions: camelCase
 
 ### 示例 Example
@@ -274,37 +260,47 @@ public final class P0001_Solution1 {
 
 **中文步骤 Chinese Steps:**
 
-1. **运行脚本生成模板**
+1. **抓取题目并生成骨架**
 
 ```bash
-bash Scripts/new_problem.sh
+python3 Scripts/fetch_problem.py prepare 121
 ```
 
-2. **按提示输入信息**
-   - 题号（如: 1）
-   - 题目名称（如: Two Sum）
+脚本会从 leetcode.cn 拉取题面，自动创建题目文件夹、解法骨架（含 `fatalError` 占位，保证可编译）和 `README.html`，并在 stdout 打印一份 JSON 计划。
 
-3. **脚本将自动创建**
-   - 题目文件夹: `Sources/LeetCodeSolutions/Problems/P{题号}_{题目名称}/`
-   - 解法文件: `P{题号}_Solution1.swift`
-   - 测试文件: `Tests/LeetCodeSolutionsTests/P{题号}_Tests.swift`
+2. **补全单元测试**
+
+在 `Tests/LeetCodeSolutionsTests/` 下按既有风格编写测试（每个用例一个方法、中英双语注释、覆盖边界与极限情况）。也可以让 `leetcode-add` skill 在对话内自动完成这一步。
+
+3. **编译门禁 + 本地提交**
+
+```bash
+python3 Scripts/fetch_problem.py finalize 121
+```
+
+先跑 `swift build --build-tests`（只编译不跑测试——解法未实现时测试必然失败），通过后按序创建 3 个本地提交。默认**不推送**，需要时加 `--push`。
 
 **English Steps:**
 
-1. **Run the script to generate template**
+1. **Fetch the problem and scaffold**
 
 ```bash
-bash Scripts/new_problem.sh
+python3 Scripts/fetch_problem.py prepare 121
 ```
 
-2. **Enter information as prompted**
-   - Problem number (e.g., 1)
-   - Problem name (e.g., Two Sum)
+Pulls the statement from leetcode.cn and creates the problem folder, a solution skeleton (with a `fatalError` placeholder so it still compiles) and `README.html`, printing a JSON plan on stdout.
 
-3. **The script will automatically create**
-   - Problem folder: `Sources/LeetCodeSolutions/Problems/P{Number}_{Name}/`
-   - Solution file: `P{Number}_Solution1.swift`
-   - Test file: `Tests/LeetCodeSolutionsTests/P{Number}_Tests.swift`
+2. **Add unit tests**
+
+Write tests under `Tests/LeetCodeSolutionsTests/` following the existing style (one method per case, bilingual comments, boundary and extreme cases covered).
+
+3. **Compile gate and local commits**
+
+```bash
+python3 Scripts/fetch_problem.py finalize 121
+```
+
+Runs `swift build --build-tests` (compile only — tests necessarily fail while the solution is a skeleton), then creates three local commits in order. It does **not** push by default; add `--push` when you want that.
 
 ### 方法二：手动创建 Method 2: Manual Creation
 
@@ -616,33 +612,43 @@ View CI status: Click the CI badge at the top of README
 **中文 Chinese:**
 
 ```swift
-// 在 Sandbox 中快速测试
-// Sources/Sandbox/main.swift
-import LeetCodeSolutions
+// 在测试中快速验证
+// Tests/LeetCodeSolutionsTests/P0001_Tests.swift
+import XCTest
+@testable import LeetCodeSolutions
 
-let solution = P0001_Solution1()
-print(solution.twoSum([2, 7, 11, 15], 9))
+final class P0001_Tests: XCTestCase {
+    func testExample() {
+        let solution = P0001_Solution1()
+        XCTAssertEqual(solution.twoSum([2, 7, 11, 15], 9), [0, 1])
+    }
+}
 ```
 
 ```bash
-# 运行 Sandbox
-swift run Sandbox
+# 运行测试
+swift test
 ```
 
 **English:**
 
 ```swift
-// Quick testing in Sandbox
-// Sources/Sandbox/main.swift
-import LeetCodeSolutions
+// Quick verification in tests
+// Tests/LeetCodeSolutionsTests/P0001_Tests.swift
+import XCTest
+@testable import LeetCodeSolutions
 
-let solution = P0001_Solution1()
-print(solution.twoSum([2, 7, 11, 15], 9))
+final class P0001_Tests: XCTestCase {
+    func testExample() {
+        let solution = P0001_Solution1()
+        XCTAssertEqual(solution.twoSum([2, 7, 11, 15], 9), [0, 1])
+    }
+}
 ```
 
 ```bash
-# Run Sandbox
-swift run Sandbox
+# Run tests
+swift test
 ```
 
 ### 代码复用 Code Reuse
@@ -782,14 +788,14 @@ MIT © 2025 Zishang Peng
 
 **中文 Chinese:**
 - ✨ 项目初始化
-- ✨ 实现 40 道 LeetCode 题目
+- ✨ 实现 59 道 LeetCode 题目
 - ✨ 添加 CI/CD 配置
 - ✨ 完善项目文档
 - ✨ 新增社区健康文件：CODE_OF_CONDUCT.md、CONTRIBUTING.md、SECURITY.md
 
 **English:**
 - ✨ Project initialization
-- ✨ Implemented 40 LeetCode problems
+- ✨ Implemented 59 LeetCode problems
 - ✨ Added CI/CD configuration
 - ✨ Improved project documentation
 - ✨ Added community health files: CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md

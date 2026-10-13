@@ -21,20 +21,6 @@
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Sandbox"
-               BuildableName = "Sandbox"
-               BlueprintName = "Sandbox"
-               ReferencedContainer = "container:">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,15 +28,9 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:Tests/TestPlan.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
       <Testables>
          <TestableReference
-            skipped = "YES"
+            skipped = "NO"
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -59,17 +39,6 @@
                BlueprintName = "LeetCodeSolutionsTests"
                ReferencedContainer = "container:">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "P0003_Solution1_Tests/testLongStringPerformance()">
-               </Test>
-               <Test
-                  Identifier = "P0003_Solution1_Tests/testMaxLengthEdgeCase()">
-               </Test>
-               <Test
-                  Identifier = "P0003_Solution2_Tests/testMaxLengthEdgeCase()">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
@@ -86,9 +55,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Sandbox"
-            BuildableName = "Sandbox"
-            BlueprintName = "Sandbox"
+            BlueprintIdentifier = "LeetCodeSolutions"
+            BuildableName = "LeetCodeSolutions"
+            BlueprintName = "LeetCodeSolutions"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
@@ -102,9 +71,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Sandbox"
-            BuildableName = "Sandbox"
-            BlueprintName = "Sandbox"
+            BlueprintIdentifier = "LeetCodeSolutions"
+            BuildableName = "LeetCodeSolutions"
+            BlueprintName = "LeetCodeSolutions"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>

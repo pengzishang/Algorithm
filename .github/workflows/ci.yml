@@ -22,14 +22,16 @@ jobs:
           uname -a || true
           echo "--- swift --version ---"
           swift --version || true
-      - name: Ensure Swift version is Apple Swift 6.1.2
+      - name: Report Swift version
         run: |
-          EXPECTED="Apple Swift version 6.1.2"
-          echo "Expecting: $EXPECTED"
-          ACTUAL=$(swift --version 2>&1 | head -n1)
-          echo "Actual: $ACTUAL"
-          if ! echo "$ACTUAL" | grep -q "Apple Swift version 6.1.2"; then
-            echo "Swift version mismatch: expected $EXPECTED"
+          # Package.swift already declares swift-tools-version: 6.1, so the
+          # toolchain enforces the minimum. This step only reports, it does not
+          # pin an exact patch release (which used to fail on newer runners).
+          swift --version
+          MAJOR=$(swift -version 2>&1 | head -n1 | grep -oE 'version [0-9]+\.[0-9]+' | grep -oE '[0-9]+\.[0-9]+')
+          echo "Detected Swift $MAJOR (minimum required: 6.1 via Package.swift)"
+          if [ "$(printf '%s\n6.1\n' "$MAJOR" | sort -V | head -n1)" != "6.1" ]; then
+            echo "::error::Swift $MAJOR is older than the required 6.1"
             exit 1
           fi
       - name: Run tests

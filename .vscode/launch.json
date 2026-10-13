@@ -5,20 +5,10 @@
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:Algorithm}",
-            "name": "Debug Sandbox",
-            "preLaunchTask": "swift: Build Debug Sandbox",
-            "target": "Sandbox",
+            "name": "Run Tests",
+            "preLaunchTask": "swift: Build All",
+            "target": "LeetCodeSolutionsTests",
             "configuration": "debug"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:Algorithm}",
-            "name": "Release Sandbox",
-            "preLaunchTask": "swift: Build Release Sandbox",
-            "target": "Sandbox",
-            "configuration": "release"
         }
     ]
 }
