@@ -7,3 +7,7 @@ Breakpoints_v2.xcbkptlist
 /.build
 .DS_Store
 __pycache__/
+
+# Xcode auto-generated per-target schemes (regenerated on open)
+.swiftpm/xcode/xcshareddata/xcschemes/*.xcscheme
+!.swiftpm/xcode/xcshareddata/xcschemes/LeetCodeSolutions-Package.xcscheme
