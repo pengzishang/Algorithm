@@ -1,0 +1,89 @@
+{
+  "configurations" : [
+    {
+      "id" : "EA2E2A11-E710-4FFC-81DD-2EF56BDA8205",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "testInteropMode" : "complete"
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "P0001_Tests",
+        "P0002_Tests",
+        "P0003_Solution1_Tests",
+        "P0003_Solution2_Tests",
+        "P0014_Tests",
+        "P0015_Tests",
+        "P0026_Tests",
+        "P0027_Tests",
+        "P0043_Solution1_Tests",
+        "P0050_Tests",
+        "P0066_Solution1_Tests",
+        "P0066_Solution2_Tests",
+        "P0067_Solution1_Tests",
+        "P0088_Tests",
+        "P0137_Solution1_Tests",
+        "P0137_Solution2_Tests",
+        "P0203_Tests",
+        "P0231_Solution1_Tests",
+        "P0231_Solution2_Tests",
+        "P0237_Tests",
+        "P0258_Solution1_Tests",
+        "P0260_Solution1_Tests",
+        "P0263_Solution1_Tests",
+        "P0283_Tests",
+        "P0326_Solution1_Tests",
+        "P0342_Solution1_Tests",
+        "P0496_Tests",
+        "P0643_Solution1_Tests",
+        "P0709_Solution1_Tests",
+        "P0852_Solution1_Tests",
+        "P0867_Solution1_Tests",
+        "P1052_GrumpyBookstoreOwnerTests",
+        "P1281_Solution1_Tests",
+        "P1317_Solution1_Tests",
+        "P1343_Solution1_Tests",
+        "P1422_Solution1_Tests",
+        "P1422_Solution2_Tests",
+        "P1423_Solution1_Tests",
+        "P1456_Solution1_Tests",
+        "P1470_Solution1_Tests",
+        "P1486_Solution1_Tests",
+        "P1486_Solution2_Tests",
+        "P1512_Solution1_Tests",
+        "P1534_Solution1_Tests",
+        "P2090_Solution1_Tests",
+        "P2134_Solution1_Tests",
+        "P2235_Tests",
+        "P2236_Solution1_Tests",
+        "P2379_Solution1_Tests",
+        "P2413_Solution1_Tests",
+        "P2460_Tests",
+        "P2461_Solution1_Tests",
+        "P2469_Solution1_Tests",
+        "P2487_Tests",
+        "P2586_Solution1_Tests",
+        "P2841_Solution1_Tests",
+        "P2841_Solution2_Tests",
+        "P2996_Tests",
+        "P3217_Tests",
+        "P3652_Solution1_Tests",
+        "P3679_Solution1_Tests",
+        "P3694_Solution1_Tests"
+      ],
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "LeetCodeSolutionsTests",
+        "name" : "LeetCodeSolutionsTests"
+      }
+    }
+  ],
+  "version" : 1
+}
